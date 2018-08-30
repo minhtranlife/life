@@ -6,6 +6,7 @@ use App\Company;
 use App\CsKdDvLt;
 use App\District;
 use App\DmDvQl;
+use App\DmSanPham;
 use App\dmvitridat;
 use App\DnDvGs;
 use App\DnDvLt;
@@ -47,7 +48,9 @@ class HomeController extends Controller
      * */
     public function index()
     {
+        $modelsp = DmSanPham::all();
         return view('dashboard')
+            ->with('modelsp',$modelsp)
             ->with('pageTitle','Trang chủ');
     }
 }

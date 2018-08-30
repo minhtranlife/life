@@ -204,9 +204,8 @@
 												</span>
                                     </a>
                                 </li>
-
-                                <li class="m-menu__item  m-menu__item--submenu"  data-menu-submenu-toggle="click" aria-haspopup="true">
-                                    <a  href="#" class="m-menu__link m-menu__toggle">
+                                <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
+                                    <a href="#" class="m-menu__link m-menu__toggle">
                                         <span class="m-menu__item-here"></span>
 												<span class="m-menu__link-text">
 													Sản phẩm
@@ -214,86 +213,46 @@
                                         <i class="m-menu__hor-arrow la la-angle-down"></i>
                                         <i class="m-menu__ver-arrow la la-angle-right"></i>
                                     </a>
-                                    <div class="m-menu__submenu  m-menu__submenu--fixed-xl m-menu__submenu--center" >
+                                    <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
                                         <span class="m-menu__arrow m-menu__arrow--adjust"></span>
-                                        <div class="m-menu__subnav">
-                                            <ul class="m-menu__content">
-                                                <!--Menu sản phẩm -->
-                                                <li class="m-menu__item">
-                                                    <h3 class="m-menu__heading m-menu__toggle">
-																<span class="m-menu__link-text">
-																	Nhóm phần mềm quản lý
-																</span>
-                                                        <i class="m-menu__ver-arrow la la-angle-right"></i>
-                                                    </h3>
-                                                    <ul class="m-menu__inner">
-                                                        <li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
-                                                            <a  href="inner.html" class="m-menu__link ">
-                                                                <i class="m-menu__link-bullet m-menu__link-bullet--line">
-                                                                    <span></span>
-                                                                </i>
-																		<span class="m-menu__link-text">
-																			Coca Cola CRM
-																		</span>
+                                        <ul class="m-menu__subnav">
+                                            <?php
+                                            $nhomsp = \App\DmSanPham::select('nhomsp')->groupBy('nhomsp')->get()
+                                            ?>
+                                            @foreach($nhomsp as $nhomsp)
+                                            <li class="m-menu__item  m-menu__item--submenu" data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
+                                                <a href="#" class="m-menu__link m-menu__toggle">
+															<span class="m-menu__link-text">
+																{{$nhomsp->nhomsp}}
+															</span>
+                                                    <i class="m-menu__hor-arrow la la-angle-right"></i>
+                                                    <i class="m-menu__ver-arrow la la-angle-right"></i>
+                                                </a>
+                                                <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--right">
+                                                    <span class="m-menu__arrow "></span>
+                                                    <ul class="m-menu__subnav">
+                                                        <?php
+                                                        $modelsp = \App\DmSanPham::where('nhomsp',$nhomsp->nhomsp)->get();
+                                                        ?>
+                                                        @foreach($modelsp as $sp)
+                                                        <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
+                                                            <a href="{{url('sanpham/'.$sp->id)}}" class="m-menu__link ">
+                                                                <span class="m-menu__link-text">
+                                                                    {{$sp->tensp}}
+                                                                </span>
                                                             </a>
                                                         </li>
-                                                        <li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
-                                                            <a  href="inner.html" class="m-menu__link ">
-                                                                <i class="m-menu__link-bullet m-menu__link-bullet--line">
-                                                                    <span></span>
-                                                                </i>
-																		<span class="m-menu__link-text">
-																			Delta Airlines Booking Site
-																		</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
-                                                            <a  href="inner.html" class="m-menu__link ">
-                                                                <i class="m-menu__link-bullet m-menu__link-bullet--line">
-                                                                    <span></span>
-                                                                </i>
-																		<span class="m-menu__link-text">
-																			Malibu Accounting
-																		</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
-                                                            <a  href="inner.html" class="m-menu__link ">
-                                                                <i class="m-menu__link-bullet m-menu__link-bullet--line">
-                                                                    <span></span>
-                                                                </i>
-																		<span class="m-menu__link-text">
-																			Vineseed Website Rewamp
-																		</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
-                                                            <a  href="inner.html" class="m-menu__link ">
-                                                                <i class="m-menu__link-bullet m-menu__link-bullet--line">
-                                                                    <span></span>
-                                                                </i>
-																		<span class="m-menu__link-text">
-																			Zircon Mobile App
-																		</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
-                                                            <a  href="inner.html" class="m-menu__link ">
-                                                                <i class="m-menu__link-bullet m-menu__link-bullet--line">
-                                                                    <span></span>
-                                                                </i>
-																		<span class="m-menu__link-text">
-																			Mercury CMS
-																		</span>
-                                                            </a>
-                                                        </li>
+                                                        @endforeach
+
                                                     </ul>
-                                                </li>
-                                                <!-End menu sản phẩm -->
-                                            </ul>
-                                        </div>
+                                                </div>
+                                            </li>
+                                            @endforeach
+
+                                        </ul>
                                     </div>
                                 </li>
+
                                 <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel">
                                     <a  href="{{url('company')}}" class="m-menu__link m-menu__toggle">
                                         <span class="m-menu__item-here"></span>
