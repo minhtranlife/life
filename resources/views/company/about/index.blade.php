@@ -76,6 +76,18 @@
                                     <div class="row m-row--no-padding align-items-center">
                                         <div class="col">
                                             <h3 class="m-widget1__title">
+                                                Văn phòng đại diện:
+                                            </h3>
+                                            <span class="m-widget1__desc">
+                                                Số 77 - Khu Tái định cư X2A Yên Sở - Hoàng Mai - Hà Nội
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-widget1__item">
+                                    <div class="row m-row--no-padding align-items-center">
+                                        <div class="col">
+                                            <h3 class="m-widget1__title">
                                                 Giấy phép kinh doanh:
                                             </h3>
                                             <span class="m-widget1__desc">

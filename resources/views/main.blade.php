@@ -72,6 +72,7 @@
     <script src="{{url('assets/app/js/dashboard.js')}}" type="text/javascript"></script>
 
     <!--end::Page Snippets -->
+    <script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
     @yield('custom-script')
 </head>
 <!-- end::Head -->
@@ -236,7 +237,7 @@
                                                         ?>
                                                         @foreach($modelsp as $sp)
                                                         <li class="m-menu__item " data-redirect="true" aria-haspopup="true">
-                                                            <a href="{{url('sanpham/'.$sp->id)}}" class="m-menu__link ">
+                                                            <a href="{{url('sanpham?&id='.$sp->id)}}" class="m-menu__link ">
                                                                 <span class="m-menu__link-text">
                                                                     {{$sp->tensp}}
                                                                 </span>
@@ -275,7 +276,7 @@
                                         <ul class="m-menu__subnav">
                                             <li class="m-menu__item ">
                                                 <a href="{{url('vitrituyendung')}}" class="m-menu__link ">
-                                                    <i class="m-menu__link-icon flaticon-diagram"></i>
+                                                    <i class="m-menu__link-icon flaticon-users"></i>
                                                     <span class="m-menu__link-wrap">
                                                         <span class="m-menu__link-text">
                                                             Vị trí tuyển dụng
@@ -285,7 +286,7 @@
                                             </li>
                                             <li class="m-menu__item">
                                                 <a href="{{url('chinhsachtuyendung')}}" class="m-menu__link ">
-                                                    <i class="m-menu__link-icon flaticon-business"></i>
+                                                    <i class="m-menu__link-icon flaticon-diagram"></i>
                                                     <span class="m-menu__link-text">
                                                         Chính sách tuyển dụng
                                                     </span>
@@ -301,6 +302,47 @@
                                             Liên hệ
                                         </span>
                                     </a>
+                                </li>
+                                <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"  data-menu-submenu-toggle="click" aria-haspopup="true">
+                                    <a  href="#" class="m-menu__link m-menu__toggle">
+                                        <span class="m-menu__item-here"></span>
+												<span class="m-menu__link-text">
+													Tin tức
+												</span>
+                                        <i class="m-menu__hor-arrow la la-angle-down"></i>
+                                        <i class="m-menu__ver-arrow la la-angle-right"></i>
+                                    </a>
+                                    <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
+                                        <span class="m-menu__arrow m-menu__arrow--adjust"></span>
+                                        <ul class="m-menu__subnav">
+                                            <li class="m-menu__item ">
+                                                <a href="{{url('')}}" class="m-menu__link ">
+                                                    <i class="m-menu__link-icon flaticon-diagram"></i>
+                                                    <span class="m-menu__link-wrap">
+                                                        <span class="m-menu__link-text">
+                                                            Lịch trình tập huấn
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="m-menu__item">
+                                                <a href="{{url('')}}" class="m-menu__link ">
+                                                    <i class="m-menu__link-icon flaticon-graphic-2"></i>
+                                                    <span class="m-menu__link-text">
+                                                        Hình ảnh tập huấn
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="m-menu__item">
+                                                <a href="{{url('')}}" class="m-menu__link ">
+                                                    <i class="m-menu__link-icon flaticon-clipboard"></i>
+                                                    <span class="m-menu__link-text">
+                                                        Thông tin cập nhật
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -332,6 +374,7 @@
     <!-- end::Body -->
     <!-- begin::Footer -->
     <footer class="m-grid__item m-footer ">
+
         <div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
             <div class="m-footer__wrapper">
                 <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
@@ -342,37 +385,11 @@
                     </div>
                     <!--div class="m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first">
                         <ul class="m-footer__nav m-nav m-nav--inline m--pull-right">
-                            <li class="m-nav__item">
-                                <a href="#" class="m-nav__link">
-                                    <span class="m-nav__link-text">
-                                        About
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="m-nav__item">
-                                <a href="#"  class="m-nav__link">
-                                    <span class="m-nav__link-text">
-                                        Privacy
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="m-nav__item">
-                                <a href="#" class="m-nav__link">
-                                    <span class="m-nav__link-text">
-                                        T&C
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="m-nav__item">
-                                <a href="#" class="m-nav__link">
-                                    <span class="m-nav__link-text">
-                                        Purchase
-                                    </span>
-                                </a>
-                            </li>
                             <li class="m-nav__item m-nav__item--last">
-                                <a href="#" class="m-nav__link" data-toggle="m-tooltip" title="Support Center" data-placement="left">
-                                    <i class="m-nav__link-icon flaticon-info m--icon-font-size-lg3"></i>
+                                <a href="#" class="m-nav__link" data-toggle="m-tooltip" title="" data-placement="left">
+                                    <i class="skype-button rounded" data-contact-id="phantrunglife" data-text="Bạn cần hỗ trợ!!!"></i>
+
+
                                 </a>
                             </li>
                         </ul>
@@ -381,6 +398,7 @@
             </div>
         </div>
     </footer>
+        <span class="skype-button bubble" data-contact-id="ngochieuvp_life" title="Hỗ trợ khách hàng"></span>
     <!-- end::Footer -->
 </div>
 <!-- end:: Page -->
@@ -968,7 +986,7 @@
 </div>
 <!-- end::Quick Sidebar -->
 <!-- begin::Scroll Top -->
-<div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
+<div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300" style="margin-bottom: 0px">
     <i class="la la-arrow-up"></i>
 </div>
 <!-- end::Scroll Top -->
@@ -992,9 +1010,10 @@
         </a>
     </li>
     <li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Map" data-placement="left">
-        <a href="http://keenthemes.com/metronic/documentation.html" target="_blank">
+        <a href="https://goo.gl/maps/Ms1AxXBmLEo" target="_blank">
             <i class="fa fa-map-marker"></i>
         </a>
+
     </li>
     <li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Support" data-placement="left">
         <a href="{{url('support')}}" target="_blank">

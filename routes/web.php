@@ -19,6 +19,8 @@ Route::get('chinhsachtuyendung',function(){
         ->with('pageTitle','Chính sách tuyển dụng');
 });
 
+Route::resource('sanpham','DmSanPhamController');
+
 
 // <editor-fold defaultstate="collapsed" desc="--Setting--">
 Route::resource('general','GeneralConfigsController');

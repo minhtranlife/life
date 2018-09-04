@@ -17,6 +17,7 @@
             $('#slider').nivoSlider();
         });
     </script>
+
 @stop
 @section('content')
         <div class="slider-wrapper theme-default">
@@ -27,5 +28,4 @@
                 <img src="{{url('images/dasboard/img_snow_wide.jpg')}}" data-thumb="{{url('images/dasboard/img_snow_wide.jpg')}}" alt="" title="" />
             </div>
         </div>
-
 @stop
