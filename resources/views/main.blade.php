@@ -152,7 +152,7 @@
                                                                         Logout
                                                                     </a>
                                                                 @else
-                                                                    <a href="#" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
+                                                                    <a href="{{url('login')}}" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
                                                                         Login
                                                                     </a>
                                                                 @endif

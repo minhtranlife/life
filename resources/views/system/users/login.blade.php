@@ -1,229 +1,177 @@
-<!DOCTYPE html>
-<!-- 
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.4
-Version: 3.9.0
+<!DOCTYPE html><!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 4
+Version: 5.0
 Author: KeenThemes
 Website: http://www.keenthemes.com/
 Contact: support@keenthemes.com
 Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
 Like: www.facebook.com/keenthemes
 Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
 License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
 -->
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en">
-<!--<![endif]-->
-<!-- BEGIN HEAD -->
-<head>
-	<meta charset="utf-8"/>
-	<title>{{$pageTitle}}</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<meta content="" name="description"/>
-	<meta content="" name="author"/>
-	<!-- BEGIN GLOBAL MANDATORY STYLES -->
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
-	<link href="{{url('assets/global/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css"/>
-	<link href="{{url('assets/global/plugins/simple-line-icons/simple-line-icons.min.css')}}" rel="stylesheet" type="text/css"/>
-	<link href="{{url('assets/global/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-	<link href="{{url('assets/global/plugins/uniform/css/uniform.default.css')}}" rel="stylesheet" type="text/css"/>
-	<!-- END GLOBAL MANDATORY STYLES -->
-	<!-- BEGIN PAGE LEVEL STYLES -->
-	<link href="{{url('assets/global/plugins/select2/select2.css')}}" rel="stylesheet" type="text/css"/>
-	<link href="{{url('assets/admin/pages/css/login-soft.css')}}" rel="stylesheet" type="text/css"/>
-	<!-- END PAGE LEVEL SCRIPTS -->
-	<!-- BEGIN THEME STYLES -->
-	<link href="{{url('assets/global/css/components.css')}}" id="style_components" rel="stylesheet" type="text/css"/>
-	<link href="{{url('assets/global/css/plugins.css')}}" rel="stylesheet" type="text/css"/>
-	<link href="{{url('assets/admin/layout/css/layout.css')}}" rel="stylesheet" type="text/css"/>
-	<link id="style_color" href="{{url('assets/admin/layout/css/themes/darkblue.css')}}" rel="stylesheet" type="text/css"/>
-	<link href="{{url('assets/admin/layout/css/custom.css')}}" rel="stylesheet" type="text/css"/>
-	<!-- END THEME STYLES -->
-	<!--link rel="shortcut icon" href="favicon.ico"/-->
-	<link rel="shortcut icon" href="{{ url('images/LIFESOFT.png')}}" type="image/x-icon">
-</head>
-<!-- END HEAD -->
-<!-- BEGIN BODY -->
-<body class="login">
-<!-- BEGIN LOGO -->
-<div class="logo">
-	<!--a href="">
-		<img src="{{ url('images/LIFESOFT.png')}}"  width="250" alt="Công ty TNHH phát triển phần mềm Cuộc Sống"/>
-	</a-->
-	<h2 style="text-transform: uppercase;"><b style="color: #000000">PHẦN MỀM CƠ SỞ DỮ LIỆU VỀ GIÁ
-			{{isset(getGeneralConfigs()['diadanh']) ? getGeneralConfigs()['diadanh'] : ''}}</b></h2>
-</div>
-<!-- END LOGO -->
-<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-<div class="menu-toggler sidebar-toggler">
-</div>
-<!-- END SIDEBAR TOGGLER BUTTON -->
-<!-- BEGIN LOGIN -->
-<div class="content">
-	<!-- BEGIN LOGIN FORM -->
-		{!! Form::open(['url'=>'/signin','id' => 'form-login', 'class'=>'form-horizontal form-validate']) !!}
-		<h3 class="form-title">Đăng nhập</h3>
-		<div class="alert alert-danger display-hide">
-			<button class="close" data-close="alert"></button>
-			<span>
-			Nhập thông tin username và password. </span>
-		</div>
-		<div class="form-group">
-			<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-			<label class="control-label visible-ie8 visible-ie9">Username</label>
-			<div class="input-icon">
-				<i class="fa fa-user"></i>
-				<input class="form-control required type="text" autocomplete="off" placeholder="Username" name="username" id="username" autofocus >
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label visible-ie8 visible-ie9">Password</label>
-			<div class="input-icon">
-				<i class="fa fa-lock"></i>
-				<input class="form-control required" type="password" autocomplete="off" placeholder="Password" name="password" id="password"/>
-			</div>
-		</div>
-		<div class="form-actions">
-			<button type="submit" class="btn blue pull-right" id="login_button" onclick="validatePassword();">
-				Đăng nhập <i class="m-icon-swapright m-icon-white"></i>
-			</button>
-			<br>
-		</div>
-		{!! Form::close() !!}
-		<!--div class="forget-password">
-			<p>
-				Bạn quên mật khẩu truy cập? Click <a href="{{url('forgot_password')}}">
-					here </a>
-			</p>
-		</div-->
-		<!--div class="create-account">
-			<p>Hướng dẫn đăng ký tài khoản?&nbsp;<a href="http://help.csdlgia.vn/dang_ky_tai_khoan" target="_blank">Click here?</a> </p>
-			<p>
-				Bạn chưa có tài khoản?&nbsp;<a data-target="#dangky-doanhnghiep" data-toggle="modal">
-					Đăng ký tài khoản </a>
-			</p>
-
-		</div-->
-</div>
-<!-- END LOGIN -->
-<!-- BEGIN COPYRIGHT -->
-<div class="copyright">
-	2016 &copy; LifeSoft <a href="" >Tiện ích hơn - Hiệu quả hơn</a>
-</div>
-
-<!--Modal đăng ký-->
-<div id="dangky-doanhnghiep" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
-	<div class="modal-dialog">
-		{!! Form::open(['url'=>'reports/dvlt/BC1','target'=>'_blank' , 'id' => 'frm_BC1', 'class'=>'form-horizontal form-validate']) !!}
-		<div class="modal-content">
-			<div class="modal-header modal-header-primary">
-				<button type="button" data-dismiss="modal" aria-hidden="true"
-						class="close">&times;</button>
-				<h4 id="modal-header-primary-label" class="modal-title">Doanh nghiệp của bạn cung cấp dịch vụ???</h4>
-			</div>
-			<div class="modal-body">
-				<div class="form-horizontal">
-					<div class="form-group">
-						<div class="col-md-12" align="center">
-							@if(canGeneral('dvlt','dvlt'))
-							<a class="btn btn-primary" data-toggle="modal" href="{{url('dangkytaikhoan?&level=DVLT')}}">
-								Dịch vụ lưu trú </a>
-							@endif
-							@if(canGeneral('dvvt','vtxk') || canGeneral('dvvt','vtxb') || canGeneral('dvvt','vtxtx') || canGeneral('dvvt','vtch'))
-							<a class="btn btn-success" data-toggle="modal" href="{{url('dangkytaikhoan?&level=DVVT')}}">
-								Dịch vụ vận tải </a>
-							@endif
-							@if(canGeneral('dvgs','dvgs'))
-							<a class="btn btn-warning" data-toggle="modal" href="{{url('dangkytaikhoan?&level=DVGS')}}">Dịch vụ giá sữa</a>
-							@endif
-							@if(canGeneral('dvtacn','dvtacn'))
-								<a class="btn btn-info" data-toggle="modal" href="{{url('dangkytaikhoan?&level=DVTACN')}}">Thức ăn chăn nuôi</a>
-							@endif
+<html lang="en" >
+	<!-- begin::Head -->
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			LifeSoft | {{$pageTitle}}
+		</title>
+		<meta name="description" content="Latest updates and statistic charts">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!--begin::Web font -->
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+		<script>
+          WebFont.load({
+            google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+          });
+		</script>
+		<!--end::Web font -->
+		<!--begin::Base Styles -->
+		<link href="{{url('assets/vendors/base/vendors.bundle.css')}}" rel="stylesheet" type="text/css" />
+		<link href="{{url('assets/demo/default/base/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+		<!--end::Base Styles -->
+		<link rel="shortcut icon" href="{{ url('images/LIFESOFT.png')}}" type="image/x-icon">
+	</head>
+	<!-- end::Head -->
+	<!-- end::Body -->
+	<body class="m--skin- m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default"  >
+		<!-- begin:: Page -->
+		<div class="m-grid m-grid--hor m-grid--root m-page">
+			<div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor m-login m-login--singin m-login--2 m-login-2--skin-3" id="m_login" style="background-image: url(../../../assets/app/media/img//bg/bg-2.jpg);">
+				<div class="m-grid__item m-grid__item--fluid	m-login__wrapper">
+					<div class="m-login__container">
+						<div class="m-login__logo">
+							<img src="{{ url('images/LIFESOFT.png')}}" width="40%">
+						</div>
+						<div class="m-login__signin">
+							<div class="m-login__head">
+								<h3 class="m-login__title">
+									Sign In To Admin
+								</h3>
+							</div>
+							<form class="m-login__form m-form" action="">
+								<div class="form-group m-form__group">
+									<input class="form-control m-input"   type="text" placeholder="Email" name="email" autocomplete="off">
+								</div>
+								<div class="form-group m-form__group">
+									<input class="form-control m-input m-login__form-input--last" type="password" placeholder="Password" name="password">
+								</div>
+								<div class="row m-login__form-sub">
+									<div class="col m--align-left m-login__form-left">
+										<label class="m-checkbox  m-checkbox--light">
+											<input type="checkbox" name="remember">
+											Remember me
+											<span></span>
+										</label>
+									</div>
+									<div class="col m--align-right m-login__form-right">
+										<a href="javascript:;" id="m_login_forget_password" class="m-link">
+											Forget Password ?
+										</a>
+									</div>
+								</div>
+								<div class="m-login__form-action">
+									<button id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn">
+										Sign In
+									</button>
+								</div>
+							</form>
+						</div>
+						<div class="m-login__signup">
+							<div class="m-login__head">
+								<h3 class="m-login__title">
+									Sign Up
+								</h3>
+							</div>
+							<form class="m-login__form m-form" action="">
+								<div class="form-group m-form__group">
+									<input class="form-control m-input" type="text" placeholder="Fullname" name="fullname">
+								</div>
+								<div class="form-group m-form__group">
+									<input class="form-control m-input" type="text" placeholder="Email" name="email" autocomplete="off">
+								</div>
+								<div class="form-group m-form__group">
+									<input class="form-control m-input" type="password" placeholder="Password" name="password">
+								</div>
+								<div class="form-group m-form__group">
+									<input class="form-control m-input m-login__form-input--last" type="password" placeholder="Confirm Password" name="rpassword">
+								</div>
+								<div class="row form-group m-form__group m-login__form-sub">
+									<div class="col m--align-left">
+										<label class="m-checkbox m-checkbox--light">
+											<input type="checkbox" name="agree">
+											I Agree the
+											<a href="#" class="m-link m-link--focus">
+												terms and conditions
+											</a>
+											.
+											<span></span>
+										</label>
+										<span class="m-form__help"></span>
+									</div>
+								</div>
+								<div class="m-login__form-action">
+									<button id="m_login_signup_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn">
+										Sign Up
+									</button>
+									&nbsp;&nbsp;
+									<button id="m_login_signup_cancel" class="btn btn-outline-focus m-btn m-btn--pill m-btn--custom m-login__btn">
+										Cancel
+									</button>
+								</div>
+							</form>
+						</div>
+						<div class="m-login__forget-password">
+							<div class="m-login__head">
+								<h3 class="m-login__title">
+									Forgotten Password ?
+								</h3>
+								<div class="m-login__desc">
+									Enter your email to reset your password:
+								</div>
+							</div>
+							<form class="m-login__form m-form" action="">
+								<div class="form-group m-form__group">
+									<input class="form-control m-input" type="text" placeholder="Email" name="email" id="m_email" autocomplete="off">
+								</div>
+								<div class="m-login__form-action">
+									<button id="m_login_forget_password_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary">
+										Request
+									</button>
+									&nbsp;&nbsp;
+									<button id="m_login_forget_password_cancel" class="btn btn-outline-focus m-btn m-btn--pill m-btn--custom  m-login__btn">
+										Cancel
+									</button>
+								</div>
+							</form>
+						</div>
+						<div class="m-login__account">
+							<span class="m-login__account-msg">
+								Don't have an account yet ?
+							</span>
+							&nbsp;&nbsp;
+							<a href="javascript:;" id="m_login_signup" class="m-link m-link--light m-login__account-link">
+								Sign Up
+							</a>
 						</div>
 					</div>
-
 				</div>
 			</div>
-			<div class="modal-footer">
-				<button type="button" data-dismiss="modal" class="btn btn-default">Hủy thao tác</button>
-			</div>
-			{!! Form::close() !!}
 		</div>
-	</div>
-</div>
-<!--end Modol-->
-
-
-<!-- END COPYRIGHT -->
-<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-<!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]>
-<script src="{{url('assets/global/plugins/respond.min.js')}}"></script>
-<script src="{{url('assets/global/plugins/excanvas.min.js')}}"></script>
-<![endif]-->
-<script src="{{url('assets/global/plugins/jquery.min.js')}}" type="text/javascript"></script>
-<script src="{{url('assets/global/plugins/jquery-migrate.min.js')}}" type="text/javascript"></script>
-<script src="{{url('assets/global/plugins/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
-<script src="{{url('assets/global/plugins/jquery.blockui.min.js')}}" type="text/javascript"></script>
-<script src="{{url('assets/global/plugins/uniform/jquery.uniform.min.js')}}" type="text/javascript"></script>
-<script src="{{url('assets/global/plugins/jquery.cokie.min.js')}}" type="text/javascript"></script>
-<!-- END CORE PLUGINS -->
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="{{url('assets/global/plugins/jquery-validation/js/jquery.validate.min.js')}}" type="text/javascript"></script>
-<script src="{{url('assets/global/plugins/backstretch/jquery.backstretch.min.js')}}" type="text/javascript"></script>
-<script type="text/javascript" src="{{url('assets/global/plugins/select2/select2.min.js')}}"></script>
-<!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="{{url('assets/global/scripts/metronic.js')}}" type="text/javascript"></script>
-<script src="{{url('assets/admin/layout/scripts/layout.js')}}" type="text/javascript"></script>
-<script src="{{url('assets/admin/layout/scripts/demo.js')}}" type="text/javascript"></script>
-<script src="{{url('assets/admin/pages/scripts/login-soft.js')}}" type="text/javascript"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
-<script>
-	jQuery(document).ready(function() {
-		Metronic.init(); // init metronic core components
-		Layout.init(); // init current layout
-		Login.init();
-		Demo.init();
-		// init background slide images
-		$.backstretch([
-					"{{url('assets/admin/pages/media/bg/3.jpg')}}",
-					"{{url('assets/admin/pages/media/bg/2.jpg')}}",
-					"{{url('assets/admin/pages/media/bg/1.jpg')}}",
-					"{{url('assets/admin/pages/media/bg/4.jpg')}}"
-				], {
-					fade: 1000,
-					duration: 8000
-				}
-		);
-	});
-</script>
-<script>
-	$("#password").keydown(function(event){
-		if(event.keyCode == 13){
-			$("#login_button").click();
-		}
-	});
-</script>
-<script type="text/javascript">
-	function validatePassword(){
-
-		var validator = $("#form-login").validate({
-			rules: {
-				username :"required",
-				password :"required"
-
-			},
-			messages: {
-				username :" Nhập username truy cập",
-				password :" Nhập mật khẩu truy cập"
-			}
-		});
-	}
-</script>
-</body>
-<!-- END BODY -->
+		<!-- end:: Page -->
+		<!--begin::Base Scripts -->
+		<script src="{{url('assets/vendors/base/vendors.bundle.js')}}" type="text/javascript"></script>
+		<script src="{{url('assets/demo/default/base/scripts.bundle.js')}}" type="text/javascript"></script>
+		<!--end::Base Scripts -->
+		<!--begin::Page Snippets -->
+		<script src="{{url('assets/snippets/pages/user/login.js')}}" type="text/javascript"></script>
+		<!--end::Page Snippets -->
+	</body>
+	<!-- end::Body -->
 </html>

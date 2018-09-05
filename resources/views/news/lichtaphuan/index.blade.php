@@ -123,7 +123,7 @@
                                                 </span>
                                                 <br>
                                                 <span class="m-widget4__sub">
-                                                    Thành phố Nha Trang - Khánh Hòa
+                                                    Số 01 Điện Biên Phủ - Thành phố Nha Trang - Khánh Hòa
                                                 </span>
                                             </div>
 												<span class="m-widget4__ext">
