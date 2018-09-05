@@ -124,10 +124,8 @@
 
 @section('content')
     <div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver	m-container m-container--responsive m-container--xxl m-page__container">
-        <div class="m-grid__item m-grid__item--fluid m-wrapper">
+        <div class="m-grid__item m-grid__item--fluid wrapper">
             <!-- BEGIN: Subheader -->
-            <div class="m-subheader ">
-                <div class="d-flex align-items-center">
                     <div class="row">
                         <div class="col-xl-12">
                             <!--begin:: Widgets/Best Sellers-->
@@ -217,8 +215,6 @@
                         </div>
                     </div>
                     <!--End-->
-                </div>
-            </div>
             <!-- END: Subheader -->
         </div>
     </div>
