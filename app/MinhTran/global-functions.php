@@ -984,4 +984,40 @@ function dinhdangso ($number , $decimals = 0, $unit = '1' , $dec_point = ',' , $
     return number_format($number, $decimals ,$dec_point, $thousands_sep);
 }
 
+function changeNameFile($name){
+    $namefile = stripUnicode($name);
+    $newnamefile = str_replace(' ','_',$namefile);
+    return $newnamefile;
+}
+function stripUnicode($str){
+    if(!$str) return false;
+    $unicode = array(
+        'a' => 'á|à|ả|ã|ạ|ă|ắ|ặ|ằ|ẳ|ẵ|â|ấ|ầ|ẩ|ẫ|ậ|Á|À|Ả|Ã|Ạ|Ă|Ắ|Ặ|Ằ|Ẳ|Ẵ|Â|Ấ|Ầ|Ẩ|Ẫ|Ậ|A',
+        'b' =>'B',
+        'c' => 'C',
+        'd' => 'đ|Đ|D',
+        'e' => 'é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ|É|È|Ẻ|Ẽ|Ẹ|Ê|Ế|Ề|Ể|Ễ|Ệ|E',
+        'f' => 'F',
+        'g' => 'G',
+        'h' => 'H',
+        'i' => 'í|ì|ỉ|ĩ|ị|Í|Ì|Ỉ|Ĩ|Ị,I',
+        'j' => 'J',
+        'k' => 'K',
+        'l' => 'L',
+        'n' => 'N',
+        'm' => 'M',
+        'o' => 'ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ|Ó|Ò|Ỏ|Õ|Ọ|Ô|Ố|Ồ|Ổ|Ỗ|Ộ|Ơ|Ớ|Ờ|Ở|Ỡ|Ợ|O',
+        'u' => 'ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự|Ú|Ù|Ủ|Ũ|Ụ|Ư|Ứ|Ừ|Ử|Ữ|Ự|U',
+        'y' => 'ý|ỳ|ỷ|ỹ|ỵ|Ý|Ỳ|Ỷ|Ỹ|Ỵ|Y',
+        't' => 'T',
+        'p' => 'P',
+        'x' => 'X',
+        's' => 'S',
+        'r' => 'R',
+        'v' => 'V',
+    );
+    foreach($unicode as $nonUnicode=>$uni) $str = preg_replace("/($uni)/i",$nonUnicode,$str);
+    return $str;
+}
+
 ?>

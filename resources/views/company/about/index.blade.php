@@ -130,7 +130,7 @@
                             <div class="m-portlet__head-tools">
                                 <ul class="nav nav-tabs m-tabs m-tabs-line   m-tabs-line--left m-tabs-line--primary" role="tablist">
                                     <li class="nav-item m-tabs__item">
-                                        <a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_user_profile_tab_1" role="tab" aria-expanded="true">
+                                        <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_1" role="tab" aria-expanded="true">
                                             <i class="flaticon-share m--hide"></i>
                                             Tiêu chí
                                         </a>
@@ -184,15 +184,13 @@
                                         <ul style="text-align: center;list-style: none">
                                         <li>
                                             <a href="">
-                                                <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" alt="Bà Nguyễn Thị Minh Tuyết - Giám đốc">
+                                                <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" title="Bà Nguyễn Thị Minh Tuyết">
                                             </a>
                                             <div class="info">
-                                                <a href="">
                                                     <div class="name">
                                                         Bà Nguyễn Thị Minh Tuyết
                                                     </div>
                                                     Giám đốc
-                                                </a>
                                             </div>
                                         </li>
                                         </ul>
@@ -201,27 +199,24 @@
                                         <table>
                                             <tr style="text-align: center">
                                                 <td width="50%"><a href="">
-                                                        <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" alt="Bà Nguyễn Thị Minh Tuyết - Giám đốc">
+                                                        <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" title="Ông Trần Ngọc Hiếu">
                                                     </a>
                                                     <div class="info">
-                                                        <a href="">
-                                                            <div class="name">
-                                                                Ông Trần Ngọc Hiếu
-                                                            </div>
-                                                            Phó Giám đốc Kỹ thuật
-                                                        </a>
-                                                    </div></td>
+                                                        <div class="name">
+                                                            Ông Trần Ngọc Hiếu
+                                                        </div>
+                                                        Phó Giám đốc Kỹ thuật
+                                                    </div>
+                                                </td>
                                                 <td>
                                                 <td width="50%"><a href="">
-                                                        <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" alt="Bà Nguyễn Thị Minh Tuyết - Giám đốc">
+                                                        <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" title="Ông Đỗ Đức Hướng">
                                                     </a>
                                                     <div class="info">
-                                                        <a href="">
                                                             <div class="name">
                                                                 Ông Đỗ Đức Hướng
                                                             </div>
                                                             Phó Giám đốc Tổng hợp
-                                                        </a>
                                                     </div></td>
                                                 <td>
                                             </tr>
@@ -231,52 +226,44 @@
                                     <table>
                                         <tr style="text-align: center">
                                             <td width="25%"><a href="">
-                                                    <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" alt="Bà Nguyễn Thị Minh Tuyết - Giám đốc">
+                                                    <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" title="Ông Phan Hoàng Trung">
                                                 </a>
                                                 <div class="info">
-                                                    <a href="">
                                                         <div class="name">
                                                             Ông Phan Hoàng Trung
                                                         </div>
                                                         Trưởng phòng Phần mềm
-                                                    </a>
                                                 </div></td>
                                             <td>
                                             <td width="25%"><a href="">
-                                                    <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" alt="Bà Nguyễn Thị Minh Tuyết - Giám đốc">
+                                                    <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" title="Ông Nguyễn Xuân Trường">
                                                 </a>
                                                 <div class="info">
-                                                    <a href="">
                                                         <div class="name">
                                                             Ông Nguyễn Xuân Trường
                                                         </div>
                                                         Trưởng văn phòng 1
-                                                    </a>
                                                 </div></td>
                                             <td>
                                             <td width="25%"><a href="">
-                                                    <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" alt="Bà Nguyễn Thị Minh Tuyết - Giám đốc">
+                                                    <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" title="Ông Nguyễn Văn Nguyên">
                                                 </a>
                                                 <div class="info">
-                                                    <a href="">
                                                         <div class="name">
                                                             Ông Nguyễn Văn Nguyên
                                                         </div>
                                                         Trưởng văn phòng 2
-                                                    </a>
                                                 </div></td>
                                             <td>
-                                            <td width="25%"><a href="">
-                                                    <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" alt="Bà Nguyễn Thị Minh Tuyết - Giám đốc">
-                                                </a>
+                                            <td width="25%">
+                                                    <img style="width: 100px; height: 130px;" src="{{url('images/avatar/no-image-available.jpg')}}" title="Ông Nguyễn Văn Nam">
                                                 <div class="info">
-                                                    <a href="">
                                                         <div class="name">
                                                             Ông Nguyễn Văn Nam
                                                         </div>
                                                         Trưởng phòng kinh doanh
-                                                    </a>
-                                                </div></td>
+                                                </div>
+                                            </td>
                                             <td>
                                         </tr>
                                     </table>

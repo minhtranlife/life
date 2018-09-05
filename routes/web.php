@@ -21,6 +21,15 @@ Route::get('chinhsachtuyendung',function(){
 
 Route::resource('sanpham','DmSanPhamController');
 
+Route::get('lichtrinhtaphuan',function(){
+    return view('news.lichtaphuan.index')
+        ->with('pageTitle','Lịch trình tập huấn');
+});
+
+Route::get('hinhanhtaphuan',function(){
+    return view('news.imgtaphuan.index')
+        ->with('pageTitle','Hình ảnh tập huấn');
+});
 
 // <editor-fold defaultstate="collapsed" desc="--Setting--">
 Route::resource('general','GeneralConfigsController');
