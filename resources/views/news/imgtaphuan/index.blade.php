@@ -135,7 +135,7 @@
                             </div>
                             <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
                                 <div>
-                                    <img data-u="image" src="{{url('imgslide/img/031.jpg')}}" />
+                                    <img data-u="image" src="{{url('imgslide/img/031.jpg')}}" title="vck"/>
                                     <img data-u="thumb" src="{{url('imgslide/img/031-s190x90.jpg')}}" />
                                 </div>
                                 <div>

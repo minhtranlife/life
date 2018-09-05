@@ -22,10 +22,12 @@
 @section('content')
         <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider">
-                <!--img src="{{url('images/dasboard/HNY2018.jpg')}}" data-thumb="{{url('images/dasboard/HNY2018.jpg')}}" alt=""-->
-                <img src="{{url('images/dasboard/img_mountains_wide.jpg')}}" data-thumb="{{url('images/dasboard/img_mountains_wide.jpg')}}" alt="" title="" />
-                <img src="{{url('images/dasboard/img_nature_wide.jpg')}}" data-thumb="{{url('images/dasboard/img_nature_wide.jpg')}}" alt="" />
-                <img src="{{url('images/dasboard/img_snow_wide.jpg')}}" data-thumb="{{url('images/dasboard/img_snow_wide.jpg')}}" alt="" title="" />
+                <!--Độ phân giải 1000 x 250-->
+                <img src="{{url('images/dashboard/HPNY.jpg')}}" data-thumb="{{url('images/dashboard/HPNY.jpg')}}" alt="" title="<marquee>Kính chúc quý khách một năm mới An Khang - Thịnh Vượng"</marquee>
+                <img src="{{url('images/dashboard/laravel.png')}}" data-thumb="{{url('images/dashboard/laravel.png')}}" alt="" title="" />
+                <!--img src="{{url('images/dashboard/img_mountains_wide.jpg')}}" data-thumb="{{url('images/dashboard/img_mountains_wide.jpg')}}" alt="" title="" />
+                <img src="{{url('images/dashboard/img_nature_wide.jpg')}}" data-thumb="{{url('images/dashboard/img_nature_wide.jpg')}}" alt="" />
+                <img src="{{url('images/dashboard/img_snow_wide.jpg')}}" data-thumb="{{url('images/dashboard/img_snow_wide.jpg')}}" alt="" title="" /-->
             </div>
         </div>
 @stop
