@@ -21,23 +21,16 @@ Route::get('chinhsachtuyendung',function(){
 
 Route::resource('sanpham','DmSanPhamController');
 
-Route::get('lichtrinhtaphuan',function(){
-    return view('news.lichtaphuan.index')
-        ->with('pageTitle','Lịch trình tập huấn');
-});
+Route::get('thongtintaphuan','ThongTinTapHuanController@index');
 
-Route::get('hinhanhtaphuan',function(){
-    return view('news.imgtaphuan.index')
-        ->with('pageTitle','Hình ảnh tập huấn');
-});
 
-Route::get('login',function(){
-    return view('system.users.login')
-        ->with('pageTitle','Login');
-});
 
-// <editor-fold defaultstate="collapsed" desc="--Setting--">
 
+// <editor-fold defaultstate="collapsed" desc="--System--">
+//Start User
+Route::get('login','UserController@index');
+Route::post('signin','UserController@signin');
+Route::get('logout','UserController@logout');
 //EndUsers
 // </editor-fold>//End Setting
 

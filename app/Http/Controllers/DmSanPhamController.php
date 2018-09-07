@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DmSanPham;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class DmSanPhamController extends Controller
 {
@@ -18,6 +19,30 @@ class DmSanPhamController extends Controller
             ->with('model',$model)
             ->with('modellq',$modellq)
             ->with('pageTitle','Thông tin sản phẩm');
+    }
+
+    public function create(){
+        if (Session::has('admin') && session('admin')->level == 'Administrator') {
+            return view('sanpham.create')
+                ->with('pageTitle','Thêm mới thông tin sản phẩm');
+        }
+        return view('errors.notlogin');
+    }
+
+    public function store(Request $request){
+        if (Session::has('admin') && session('admin')->level == 'Administrator') {
+            $inputs = $request->all();
+            $model = new DmSanPham();
+            if (isset($inputs['avatar'])) {
+                $ipf1 = $request->file('avatar');
+                $inputs['avatar'] = $id . changeNameFile($ipf1->getClientOriginalName());
+                $ipf1->move(public_path() . '/images/sanpham', $inputs['avatar']);
+            }
+            $model->create($inputs);
+            $idmax = DmSanPham::max('id');
+            return redirect('sanpham?&id=' . $idmax);
+        }
+        return view('errors.notlogin');
     }
 
     public function edit($id){

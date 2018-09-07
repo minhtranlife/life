@@ -55,7 +55,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									Sign In To Admin
 								</h3>
 							</div>
-							<form class="m-login__form m-form" action="">
+								{!! Form::open(['url'=>'/signin','id' => 'form-login', 'class'=>'m-login__form m-form']) !!}
 								<div class="form-group m-form__group">
 									<input class="form-control m-input"   type="text" placeholder="Email" name="email" autocomplete="off">
 								</div>
@@ -77,11 +77,11 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 								<div class="m-login__form-action">
-									<button id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn">
+									<button type="submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn">
 										Sign In
 									</button>
 								</div>
-							</form>
+								{!! Form::close() !!}
 						</div>
 						<div class="m-login__signup">
 							<div class="m-login__head">

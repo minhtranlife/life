@@ -20,7 +20,7 @@
                             Thông tin sản phẩm
                         </h3>
                     </div>
-                    <!--Add per -->
+                    @if(\Illuminate\Support\Facades\Session::has('admin') && session('admin')->level == 'Administrator')
                     <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
                         <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--outline-2x m-btn--air m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
                             <i class="la la-plus m--hide"></i>
@@ -33,7 +33,7 @@
                                     <div class="m-dropdown__content">
                                         <ul class="m-nav">
                                             <li class="m-nav__item">
-                                                <a href="" class="m-nav__link">
+                                                <a href="{{url('sanpham/create')}}" class="m-nav__link">
                                                     <i class="m-nav__link-icon fa fa-plus-circle"></i>
                                                     <span class="m-nav__link-text">
                                                         Thêm mới
@@ -54,6 +54,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     <!--End-->
                 </div>
             </div>

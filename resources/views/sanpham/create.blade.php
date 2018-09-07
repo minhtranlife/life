@@ -20,7 +20,7 @@
                 <div class="d-flex align-items-center">
                     <div class="mr-auto">
                         <h3 class="m-subheader__title ">
-                            Chỉnh sửa thông tin sản phẩm
+                            Thêm mới thông tin sản phẩm
                         </h3>
                     </div>
                 </div>
@@ -29,12 +29,9 @@
             <div class="m-content">
                 <div class="row">
                     <div class="col-lg-12">
-                        {!! Form::model($model, ['method' => 'PATCH', 'url'=>'sanpham/'. $model->id, 'class'=>'m-form m-form--fit m-form--label-align-right','id'=>'update_ttsp','files'=>true,'enctype'=>'multipart/form-data']) !!}
+                        {!! Form::open(['url'=>'sanpham','method'=>'post' , 'files'=>true, 'id' => 'create_ttsp','class'=>'m-form m-form--fit m-form--label-align-right','enctype'=>'multipart/form-data']) !!}
                         <div class="m-portlet__body">
                             <div class="form-group m-form__group row">
-                                @if(isset($model->avatar))
-                                    <a href="{{ url('images/sanpham/'.$model->avatar)}}" target="_blank">{{$model->avatar}}</a>
-                                @endif
                                 {!!Form::file('avatar', array('id'=>'avatar','class' => 'passvalid'))!!}
                             </div>
                             <div class="form-group m-form__group row">
@@ -64,7 +61,7 @@
                                         Mô tả
                                     </label>
                                                 <textarea id="gioithieusp" class="form-control" name="gioithieusp" cols="30" rows="10"
-                                                          placeholder="Mô tả sản phẩm">{{$model->gioithieusp}}</textarea>
+                                                          placeholder="Mô tả sản phẩm"></textarea>
                                 </div>
                             </div>
                             <div class="form-group m-form__group row">
@@ -74,7 +71,7 @@
                                     </label>
 
                                                 <textarea id="tinhnangsp" class="form-control" name="tinhnangsp" cols="30" rows="10"
-                                                          placeholder="Tính năng sản phẩm">{{$model->tinhnangsp}}</textarea>
+                                                          placeholder="Tính năng sản phẩm"></textarea>
                                 </div>
                             </div>
                             <div class="form-group m-form__group row">
@@ -83,7 +80,7 @@
                                         Dowload
                                     </label>
                                                 <textarea id="tinhnangsp" class="form-control" name="capnhatsp" cols="30" rows="10"
-                                                          placeholder="Dowload hướng dẫn">{{$model->capnhatsp}}</textarea>
+                                                          placeholder="Dowload hướng dẫn"></textarea>
                                 </div>
                             </div>
 
@@ -94,7 +91,7 @@
                                 <div class="row">
                                     <div class="col-lg-9 ml-lg-auto">
                                         <button type="submit" class="btn btn-success">
-                                            Update
+                                            Create
                                         </button>
                                         <button type="reset" class="btn btn-secondary">
                                             Cancel

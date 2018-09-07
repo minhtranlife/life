@@ -67,6 +67,7 @@
     <!--begin::Base Scripts -->
     <script src="{{url('assets/vendors/base/vendors.bundle.js')}}" type="text/javascript"></script>
     <script src="{{url('assets/demo/demo2/base/scripts.bundle.js')}}" type="text/javascript"></script>
+
     <!--end::Base Scripts -->
     <!--begin::Page Snippets -->
     <script src="{{url('assets/app/js/dashboard.js')}}" type="text/javascript"></script>
@@ -116,7 +117,7 @@
                                     <li class="m-nav__item m-topbar__user-profile m-topbar__user-profile--img  m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--header-bg-fill m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" data-dropdown-toggle="click">
                                         <a href="#" class="m-nav__link m-dropdown__toggle">
                                             <span class="m-topbar__userpic m--hide">
-                                                <img src="{{url("assets/app/media/img/users/user4.jpg")}}" class="m--img-rounded m--marginless m--img-centered" alt=""/>
+                                                <img src="{{ url('images/LIFESOFT.png')}}"  width="250" alt="Công ty TNHH phát triển phần mềm Cuộc Sống"/>
                                             </span>
                                             <span class="m-topbar__welcome">
                                                 Hello,&nbsp;
@@ -134,11 +135,11 @@
                                                             <img src="{{url('/images/avatar/default-user.png')}}" class="m--img-rounded m--marginless" alt=""/>
                                                         </div>
                                                         <div class="m-card-user__details">
-																	<span class="m-card-user__name m--font-weight-500">
-																		{{Session::has('admin') ? session('admin')->name : 'Guest'}}
-																	</span>
+                                                            <span class="m-card-user__name m--font-weight-500">
+                                                                {{Session::has('admin') ? session('admin')->name : 'Guest'}}
+                                                            </span>
                                                             <a href="" class="m-card-user__email m--font-weight-300 m-link">
-                                                                {{Session::has('admin') ? session('admin')->mail : ''}}
+                                                                {{Session::has('admin') ? session('admin')->level : ''}}
                                                             </a>
                                                         </div>
                                                     </div>
@@ -146,17 +147,32 @@
                                                 <div class="m-dropdown__body">
                                                     <div class="m-dropdown__content">
                                                         <ul class="m-nav m-nav--skin-light">
+                                                            @if (Session::has('admin'))
                                                             <li class="m-nav__item">
-                                                                @if (Session::has('admin'))
-                                                                    <a href="#" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
-                                                                        Logout
-                                                                    </a>
-                                                                @else
-                                                                    <a href="{{url('login')}}" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
-                                                                        Login
-                                                                    </a>
-                                                                @endif
+                                                                <a href="" class="m-nav__link">
+                                                                    <i class="m-nav__link-icon flaticon-lock"></i>
+                                                                    <span class="m-nav__link-title">
+                                                                        <span class="m-nav__link-wrap">
+                                                                            <span class="m-nav__link-text">
+                                                                                Change PassWord
+                                                                            </span>
+                                                                        </span>
+                                                                    </span>
+                                                                </a>
                                                             </li>
+                                                            <li class="m-nav__separator m-nav__separator--fit"></li>
+                                                            <li class="m-nav__item">
+                                                                <a href="{{url('logout')}}" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
+                                                                    Logout
+                                                                </a>
+                                                            </li>
+                                                            @else
+                                                            <li class="m-nav__item">
+                                                                <a href="{{url('login')}}" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
+                                                                    Login
+                                                                </a>
+                                                            </li>
+                                                            @endif
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -297,21 +313,11 @@
                                     <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
                                         <span class="m-menu__arrow m-menu__arrow--adjust"></span>
                                         <ul class="m-menu__subnav">
-                                            <li class="m-menu__item ">
-                                                <a href="{{url('lichtrinhtaphuan')}}" class="m-menu__link ">
-                                                    <i class="m-menu__link-icon flaticon-diagram"></i>
-                                                    <span class="m-menu__link-wrap">
-                                                        <span class="m-menu__link-text">
-                                                            Lịch trình tập huấn
-                                                        </span>
-                                                    </span>
-                                                </a>
-                                            </li>
                                             <li class="m-menu__item">
-                                                <a href="{{url('hinhanhtaphuan')}}" class="m-menu__link ">
+                                                <a href="{{url('thongtintaphuan')}}" class="m-menu__link ">
                                                     <i class="m-menu__link-icon flaticon-graphic-2"></i>
                                                     <span class="m-menu__link-text">
-                                                        Hình ảnh tập huấn
+                                                        Thông tin tập huấn
                                                     </span>
                                                 </a>
                                             </li>

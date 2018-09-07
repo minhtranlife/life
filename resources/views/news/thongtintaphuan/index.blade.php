@@ -119,13 +119,19 @@
             /*#endregion responsive code end*/
         };
     </script>
+    <script src="{{url('assets/demo/default/base/scripts.bundle.js')}}" type="text/javascript"></script>
+    <script src="{{url('assets/demo/default/custom/components/datatables/child/data-local.js')}}" type="text/javascript"></script>
 
 @stop
 
 @section('content')
+    <div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver	m-container m-container--responsive m-container--xxl m-page__container">
+        <div class="m-grid__item m-grid__item--fluid m-wrapper">
             <!-- BEGIN: Subheader -->
                 <!--begin:: Widgets/Best Sellers-->
-                <div class="m-portlet m-portlet--full-height">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="m-portlet m-portlet--full-height">
                     <div class="m-portlet__body" style="position:relative;margin:0 auto;top:0px;left:0px;width:1200px;height:550px;overflow:hidden;visibility:hidden;">
                         <!--begin::Content-->
                         <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:480px;overflow:hidden;visibility:hidden;">
@@ -207,7 +213,80 @@
                         <!--end::Content-->
                     </div>
                 </div>
+                </div>
+            </div>
                 <!--end:: Widgets/Best Sellers-->
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="m-portlet m-portlet--full-height">
+                        <div class="m-portlet__head">
+                            <div class="m-portlet__head-caption">
+                                <div class="m-portlet__head-title">
+                                    <h3 class="m-portlet__head-text">
+                                        Lịch trình tập huấn
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-portlet__body">
+                            <!--begin::Content-->
+                            <div class="m-widget5">
+                                <div class="m-widget5__item">
+                                    <div class="m-widget5__pic">
+                                        <img class="m-widget7__img" src="assets/app/media/img//products/product6.jpg" alt="">
+                                    </div>
+                                    <div class="m-widget5__content">
+                                        <h4 class="m-widget5__title">
+                                            Great Logo Designn
+                                        </h4>
+                                        <span class="m-widget5__desc">
+                                            Make Metronic Great  Again.Lorem Ipsum Amet
+                                        </span>
+                                        <div class="m-widget5__info">
+                                        <span class="m-widget5__author">
+                                            Author:
+                                        </span>
+                                        <span class="m-widget5__info-label">
+                                            author:
+                                        </span>
+                                        <span class="m-widget5__info-author-name">
+                                            Fly themes
+                                        </span>
+                                        <span class="m-widget5__info-label">
+                                            Released:
+                                        </span>
+                                        <span class="m-widget5__info-date m--font-info">
+                                            23.08.17
+                                        </span>
+                                        </div>
+                                    </div>
+                                    <div class="m-widget5__stats1">
+                                        <span class="m-widget5__number">
+                                            19,200
+                                        </span>
+                                        <br>
+                                        <span class="m-widget5__sales">
+                                            sales
+                                        </span>
+                                    </div>
+                                    <div class="m-widget5__stats2">
+															<span class="m-widget5__number">
+																1046
+															</span>
+                                        <br>
+															<span class="m-widget5__votes">
+																votes
+															</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
         <!--End-->
         <!-- END: Subheader -->
     <script type="text/javascript">jssor_1_slider_init();</script>

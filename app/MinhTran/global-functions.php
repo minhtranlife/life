@@ -653,7 +653,7 @@ function can($module = null, $action = null)
     $permission = json_decode($permission, true);
 
     //check permission
-    if(isset($permission[$module][$action]) && $permission[$module][$action] == 1 || session('admin')->sadmin == 'ssa' || session('admin')->sadmin == 'sa') {
+    if(isset($permission[$module][$action]) && $permission[$module][$action] == 1 || session('admin')->sadmin == 'ssa' && session('admin')->level == 'sa') {
         return true;
     }else
         return false;
