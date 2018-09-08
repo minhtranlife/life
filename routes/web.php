@@ -10,10 +10,8 @@ Route::get('support',function(){
     return view('support.index')
         ->with('pageTitle','Thông tin liên hệ');
 });
-Route::get('vitrituyendung',function(){
-    return view('tuyendung.vitri')
-        ->with('pageTitle','Thông tin tuyển dụng');
-});
+Route::resource('vitrituyendung','ViTriTuyenDungController');
+
 Route::get('chinhsachtuyendung',function(){
     return view('tuyendung.chinhsach')
         ->with('pageTitle','Chính sách tuyển dụng');
@@ -22,7 +20,10 @@ Route::get('chinhsachtuyendung',function(){
 Route::resource('sanpham','DmSanPhamController');
 
 Route::get('thongtintaphuan','ThongTinTapHuanController@index');
-
+Route::get('thongtincapnhat',function(){
+    return view('news.thongtincapnhat.index')
+        ->with('pageTitle','Thông tin cập nhật');
+});
 
 
 

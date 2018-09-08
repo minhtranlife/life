@@ -9,6 +9,7 @@ return array(
     'CreateDmsanphamTable' => $baseDir . '/database/migrations/2018_08_29_100645_create_dmsanpham_table.php',
     'CreateLichtaphuanTable' => $baseDir . '/database/migrations/2018_09_06_133045_create_lichtaphuan_table.php',
     'CreateUserTable' => $baseDir . '/database/migrations/2018_09_05_140357_create_user_table.php',
+    'CreateVitrituyendungTable' => $baseDir . '/database/migrations/2018_09_07_145339_create_vitrituyendung_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',

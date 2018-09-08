@@ -322,7 +322,7 @@
                                                 </a>
                                             </li>
                                             <li class="m-menu__item">
-                                                <a href="{{url('')}}" class="m-menu__link ">
+                                                <a href="{{url('thongtincapnhat')}}" class="m-menu__link ">
                                                     <i class="m-menu__link-icon flaticon-clipboard"></i>
                                                     <span class="m-menu__link-text">
                                                         Thông tin cập nhật

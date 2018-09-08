@@ -336,6 +336,7 @@ class ComposerStaticInitd7de3fb6aaadd474bf447891cb3bef8d
         'CreateDmsanphamTable' => __DIR__ . '/../..' . '/database/migrations/2018_08_29_100645_create_dmsanpham_table.php',
         'CreateLichtaphuanTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_06_133045_create_lichtaphuan_table.php',
         'CreateUserTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_05_140357_create_user_table.php',
+        'CreateVitrituyendungTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_07_145339_create_vitrituyendung_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
