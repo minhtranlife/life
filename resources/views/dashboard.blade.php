@@ -30,4 +30,47 @@
                 <img src="{{url('images/dashboard/img_snow_wide.jpg')}}" data-thumb="{{url('images/dashboard/img_snow_wide.jpg')}}" alt="" title="" /-->
             </div>
         </div>
+
+        <div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver	m-container m-container--responsive m-container--xxl m-page__container">
+            <div class="m-grid__item m-grid__item--fluid m-wrapper">
+                <div class="m-content">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <!--begin:: Widgets/Announcements 1-->
+                            <div class="m-portlet m--bg-accent m-portlet--bordered-semi m-portlet--skin-dark m-portlet--full-height">
+                                <div class="m-portlet__head">
+                                    <div class="m-portlet__head-caption">
+                                        <div class="m-portlet__head-title">
+                                            <h3 class="m-portlet__head-text">
+                                                LIFESOFT
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-portlet__body">
+                                    <!--begin::Widget 7-->
+                                    <div class="m-widget7 m-widget7--skin-dark">
+                                        <div class="m-widget7__desc">
+                                            <b><span style="font-size: 30px">{{(date('Y')-2012)}} năm thành lập và phát triển</span></b>
+                                            <br><br>
+                                            (27/12/2012 - 27/12/{{date('Y')}})
+                                        </div>
+                                        <div class="m-widget7__user">
+                                        </div>
+                                        <div class="m-widget7__button">
+                                            <a class="m-btn m-btn--pill btn btn-danger" href="{{url('company')}}" role="button">
+                                                About
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!--end::Widget 7-->
+                                </div>
+                            </div>
+                            <!--end:: Widgets/Announcements 1-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 @stop
