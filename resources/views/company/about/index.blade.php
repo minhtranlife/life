@@ -152,13 +152,18 @@
                             <div class="tab-pane active" id="m_user_profile_tab_1" aria-expanded="true">
                                 <div class="m-portlet__body">
                                     <div class="form-group m-form__group row">
-                                        <p>Công ty TNHH Phát triển Phần mềm Cuộc Sống là một doanh nghiệp hoạt động sâu, rộng trong lĩnh vực công nghệ thông tin:</p>
-                                        <ul>
-                                            <li>Chuyên nghiên cứu, phát triển và chuyển giao các phần mềm kế toán, phần mềm quản lý, các giải pháp đưa ứng dụng công nghệ thông tin vào cuộc sống;</li>
-                                            <li>Cung cấp các dịch vụ hỗ trợ sau bán hàng chu đáo, chuyên nghiệp, hiệu quả nhanh chóng;</li>
-                                            <li>Tư vấn và cung cấp các thiết bị trong lĩnh vực công nghệ thông tin và các lĩnh vực khác;</li>
-                                        </ul>
-                                        <p>Công ty chúng tôi hoạt động với phương châm <a href="" class="m-link">Tiện ích hơn - Hiệu quả hơn</a> luôn cam kết đem lại sự thành công và hiệu quả cho khách hàng.</p>
+                                        <dl>
+                                            <dd>-	Công ty TNHH phát triển phần mềm cuộc sống (Life_Software) được thành lập 27/12/2012,
+                                                sau gần {{date('Y')-2012}}  năm liên tục cố gắng cùng sự đồng lòng của toàn cán bộ, lãnh đạo công ty cùng
+                                                sự ủng hộ của khách hàng, công ty đã ngày một vững chắc trong ngành công nghệ thông tin của nước nhà.</dd>
+                                            <dd>-	Hiện công ty đang là thành viên của Hiệp hội phần mềm và dịch vụ CNTT Việt Nam (Vinasa).</dd>
+                                            <dd>-	Công ty có đội ngũ chuyên viên phần mềm được đào tạo bài bản, chuyên sâu, có kinh nghiệm nhiều
+                                                năm trong lĩnh vực viết phần mềm quản lý, kế toán, giải quyết các bài toán giải pháp cục bộ cho
+                                                các đơn vị chuyên biệt.</dd>
+                                            <dd>-	Với tiêu chí <a href="" class="m-link">Tiện ích hơn - Hiệu quả hơn</a> công ty chúng tôi tự tin cung cấp cho khách hàng phần mềm
+                                            tiện ích, hiệu quả nhất cùng với dịch vụ hỗ trợ tốt nhất với những cán bộ có nghiệp vụ vững chắc, luôn
+                                            sát cánh bên bạn giải quyết các vấn đề phát sinh trong quá trình sử dụng</dd>
+                                        </dl>
                                     </div>
                                 </div>
                             </div>

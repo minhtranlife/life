@@ -25,6 +25,8 @@ Route::get('thongtincapnhat',function(){
         ->with('pageTitle','Thông tin cập nhật');
 });
 
+Route::resource('imgcompany','ImgCompanyController');
+
 
 
 // <editor-fold defaultstate="collapsed" desc="--System--">

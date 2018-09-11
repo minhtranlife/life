@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 08, 2018 at 05:12 AM
+-- Generation Time: Sep 11, 2018 at 05:12 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -62,6 +62,34 @@ INSERT INTO `dmsanpham` (`id`, `nhomsp`, `tensp`, `gioithieusp`, `tinhnangsp`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `imgcompany`
+--
+
+CREATE TABLE `imgcompany` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `mota` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `chitiet` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `imgcompany`
+--
+
+INSERT INTO `imgcompany` (`id`, `img`, `mota`, `chitiet`, `created_at`, `updated_at`) VALUES
+(1, '549216_1580459922178842_9114387285866156167_n.jpg', 'Japan 2018', 'Thỏ Láu', '2018-09-11 02:47:34', '2018-09-11 02:47:34'),
+(2, '994962_10200349721585410_752088063_n.jpg', 'Đài Loan 2017', 'Thỏ Láu', '2018-09-11 02:50:15', '2018-09-11 02:50:15'),
+(3, '945830_10200413328975555_1532579489_n.jpg', 'USA 2020', 'Bố con Thỏ', '2018-09-11 02:50:47', '2018-09-11 02:50:47'),
+(4, '909155_4942100930096_2009606076_n.jpg', 'Eng 2021', 'Thỏ Láu', '2018-09-11 02:51:14', '2018-09-11 02:51:14'),
+(5, '548951_4622177572212_138871505_n.jpg', 'WTF', 'Thỏ Láu', '2018-09-11 02:51:42', '2018-09-11 02:51:42'),
+(6, '1505177_10200389553181175_42420366_n.jpg', 'Family Gấu Péo', 'Thỏ láu', '2018-09-11 02:52:26', '2018-09-11 02:52:26'),
+(7, '1907639_10201133069328614_5720894740019642474_n.jpg', '3 chỏm', 'Thỏ Láu', '2018-09-11 02:52:56', '2018-09-11 02:52:56');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lichtaphuan`
 --
 
@@ -98,7 +126,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2018_08_29_100645_create_dmsanpham_table', 1),
 (2, '2018_09_05_140357_create_user_table', 2),
 (5, '2018_09_06_133045_create_lichtaphuan_table', 3),
-(6, '2018_09_07_145339_create_vitrituyendung_table', 3);
+(6, '2018_09_07_145339_create_vitrituyendung_table', 3),
+(7, '2018_09_10_144814_create_imgcompany_table', 4);
 
 -- --------------------------------------------------------
 
@@ -165,6 +194,12 @@ ALTER TABLE `dmsanpham`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `imgcompany`
+--
+ALTER TABLE `imgcompany`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `lichtaphuan`
 --
 ALTER TABLE `lichtaphuan`
@@ -198,6 +233,11 @@ ALTER TABLE `vitrituyendung`
 ALTER TABLE `dmsanpham`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
+-- AUTO_INCREMENT for table `imgcompany`
+--
+ALTER TABLE `imgcompany`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
 -- AUTO_INCREMENT for table `lichtaphuan`
 --
 ALTER TABLE `lichtaphuan`
@@ -206,7 +246,7 @@ ALTER TABLE `lichtaphuan`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `user`
 --

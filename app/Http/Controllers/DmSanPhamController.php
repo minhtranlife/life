@@ -35,7 +35,7 @@ class DmSanPhamController extends Controller
             $model = new DmSanPham();
             if (isset($inputs['avatar'])) {
                 $ipf1 = $request->file('avatar');
-                $inputs['avatar'] = $id . changeNameFile($ipf1->getClientOriginalName());
+                $inputs['avatar'] = changeNameFile($ipf1->getClientOriginalName());
                 $ipf1->move(public_path() . '/images/sanpham', $inputs['avatar']);
             }
             $model->create($inputs);

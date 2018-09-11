@@ -334,6 +334,7 @@ class ComposerStaticInitd7de3fb6aaadd474bf447891cb3bef8d
 
     public static $classMap = array (
         'CreateDmsanphamTable' => __DIR__ . '/../..' . '/database/migrations/2018_08_29_100645_create_dmsanpham_table.php',
+        'CreateImgcompanyTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_10_144814_create_imgcompany_table.php',
         'CreateLichtaphuanTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_06_133045_create_lichtaphuan_table.php',
         'CreateUserTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_05_140357_create_user_table.php',
         'CreateVitrituyendungTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_07_145339_create_vitrituyendung_table.php',
