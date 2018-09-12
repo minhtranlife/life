@@ -66,7 +66,7 @@
                             <div class="m-portlet__body">
                                 <div class="m-card-profile">
                                     <div style="text-align: right">
-                                        <button type="button" class="btn btn-outline-brand btn-sm">
+                                        <button type="button" class="btn btn-outline-brand btn-sm" onclick="addcarts({{$model->id}})">
                                             <i class="fa fa-cart-plus"></i> Thêm vào giỏ hàng
                                         </button>
                                     </div>
@@ -176,4 +176,31 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function addcarts(id){
+            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+            //alert($('#ipguest').val());
+            $.ajax({
+                url: '/ajax/carts',
+                type: 'GET',
+                data: {
+                    _token: CSRF_TOKEN,
+                    idsp: id,
+                    ipguest: $('#ipguest').val()
+                },
+                dataType: 'JSON',
+                success: function (data) {
+                    if (data.status == 'success') {
+                        $('#ttcarts').replaceWith(data.message);
+                        toastr.success("Đã thêm vào giỏ hàng", "Thành công!");
+                    }
+
+                    else
+                        toastr.error(data.message);
+                }
+            })
+        }
+    </script>
 @stop
