@@ -131,9 +131,9 @@
                                                     <span class="m-dropdown__header-title">
                                                         0 sản phẩm
                                                     </span>
-                                                    <!--span class="m-dropdown__header-subtitle">
-                                                        Quản lý đơn hàng
-                                                    </span-->
+                                                    <span class="m-dropdown__header-subtitle">
+                                                        IP Guest: {{$_SERVER['REMOTE_ADDR']}}
+                                                    </span>
                                                 </div>
                                                 <div class="m-dropdown__body">
                                                     <div class="m-dropdown__content">

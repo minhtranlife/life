@@ -78,7 +78,8 @@
                                                         @foreach($modelspkt as $kt)
                                                             <div class="col-sm-6 col-md-3">
                                                                 <div class="thumbnail">
-                                                                    <div style="text-align: right">
+                                                                    <br>
+                                                                    <div style="text-align: right;">
                                                                         <button type="button" class="btn btn-outline-brand btn-sm">
                                                                             <i class="fa fa-cart-plus"></i> Thêm vào giỏ hàng
                                                                         </button>
@@ -116,8 +117,9 @@
                                                         @foreach($modelspql as $ql)
                                                             <div class="col-sm-6 col-md-3">
                                                                 <div class="thumbnail">
+                                                                    <br>
                                                                     <div style="text-align: right">
-                                                                        <button type="button" class="btn btn-outline-brand btn-sm">
+                                                                        <button type="button" class="btn btn-outline-brand btn-sm" onclick="addcarts({{$ql->id}})">
                                                                             <i class="fa fa-cart-plus"></i> Thêm vào giỏ hàng
                                                                         </button>
                                                                     </div>
@@ -173,14 +175,14 @@
                                             (27/12/2012 - 27/12/{{date('Y')}})
                                             <br><br>
                                             <p>Với tiêu chí <a href="" class="m-link">Tiện ích hơn - Hiệu quả hơn</a>
-                                            . LifeSoft luôn công ty chúng tôi tự tin cung cấp cho khách hàng phần mềm tiện ích, hiệu quả
+                                            . LifeSoft luôn tự tin cung cấp cho khách hàng phần mềm tiện ích, hiệu quả
                                             nhất cùng với dịch vụ hỗ trợ tốt nhất với những cán bộ có nghiệp vụ vững chắc, luôn sát cánh
                                             bên bạn giải quyết các vấn đề phát sinh trong quá trình sử dụng</p>
                                         </div>
                                         <div class="m-widget7__user">
                                         </div>
                                         <div class="m-widget7__button">
-                                            <a class="m-btn m-btn--pill btn btn-danger" href="{{url('company')}}" role="button">
+                                            <a class="btn m-btn--pill    btn-link" href="{{url('company')}}" role="button">
                                                 About
                                             </a>
                                         </div>
@@ -220,6 +222,30 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 <script>
     baguetteBox.run('.tz-gallery');
+</script>
+<script>
+    function addcarts(id){
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        alert(id);
+        /*$.ajax({
+            url: '/kkgdvlt/kkgia',
+            type: 'GET',
+            data: {
+                _token: CSRF_TOKEN,
+                id: id,
+                ttcb:  $('#ttcb').val()
+            },
+            dataType: 'JSON',
+            success: function (data) {
+                if (data.status == 'success') {
+                    $('#ttkkgia').replaceWith(data.message);
+                    InputMask();
+                }
+                else
+                    toastr.error("Không thể chỉnh sửa thông tin giá phòng nghỉ!", "Lỗi!");
+            }
+        })*/
+    }
 </script>
 
 @stop
