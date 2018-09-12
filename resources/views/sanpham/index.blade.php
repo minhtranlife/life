@@ -65,6 +65,11 @@
                         <div class="m-portlet m-portlet--full-height ">
                             <div class="m-portlet__body">
                                 <div class="m-card-profile">
+                                    <div style="text-align: right">
+                                        <button type="button" class="btn btn-outline-brand btn-sm">
+                                            <i class="fa fa-cart-plus"></i> Thêm vào giỏ hàng
+                                        </button>
+                                    </div>
 
                                     <div class="m-card-profile__pic">
                                         <div class="m-card-profile__pic-wrapper">
@@ -76,12 +81,14 @@
                                         </div>
                                     </div>
                                     <div class="m-card-profile__details">
-                                    <span class="m-card-profile__name">
-                                        {{$model->nhomsp}}
-                                    </span>
+                                        <span class="m-card-profile__name">
+                                            {{$model->nhomsp}}
+                                        </span>
                                         <a href="" class="m-link" style="font-size: 15px">
                                             {{$model->tensp}}
                                         </a>
+                                        <br>
+
                                     </div>
                                 </div>
                                 <div class="m-portlet__body-separator"></div>

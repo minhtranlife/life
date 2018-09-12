@@ -49,8 +49,11 @@ class HomeController extends Controller
     public function index()
     {
         $modelsp = DmSanPham::all();
+        $modelspql = DmSanPham::where('nhomsp','Phần mềm quản lý')->get();
+        $modelspkt = DmSanPham::where('nhomsp','Phần mềm kế toán')->get();
         return view('dashboard')
-            ->with('modelsp',$modelsp)
+            ->with('modelspql',$modelspql)
+            ->with('modelspkt',$modelspkt)
             ->with('pageTitle','Trang chủ');
     }
 }
