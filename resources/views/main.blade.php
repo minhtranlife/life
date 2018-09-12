@@ -133,6 +133,7 @@
                                                     </span>
                                                     <span class="m-dropdown__header-subtitle">
                                                         IP Guest: {{$_SERVER['REMOTE_ADDR']}}
+                                                        <br>{{Session::getId()}}
                                                     </span>
                                                 </div>
                                                 <div class="m-dropdown__body">
