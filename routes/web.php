@@ -28,6 +28,10 @@ Route::get('thongtincapnhat',function(){
 Route::resource('imgcompany','ImgCompanyController');
 
 
+Route::get('/ajax/carts','AjaxController@carts');
+Route::get('/ajax/delcarts','AjaxController@delcarts');
+
+
 
 // <editor-fold defaultstate="collapsed" desc="--System--">
 //Start User

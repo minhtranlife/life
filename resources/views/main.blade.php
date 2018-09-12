@@ -74,6 +74,7 @@
 
     <!--end::Page Snippets -->
     <script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
+
     @yield('custom-script')
 </head>
 <!-- end::Head -->
@@ -124,140 +125,52 @@
                                                 </span>
                                             </span>
                                         </a>
-                                        <div class="m-dropdown__wrapper">
+                                        <!--Carts-->
+                                        <?php
+                                            $ip = $_SERVER['REMOTE_ADDR'];
+                                            $modelcarts = \App\CartsCtDf::where('ipguest',$ip)->get();
+
+                                        ?>
+                                        <!--End Carts-->
+                                        <div class="m-dropdown__wrapper" >
                                             <span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
                                             <div class="m-dropdown__inner">
                                                 <div class="m-dropdown__header m--align-center" style="background: url(assets/app/media/img/misc/notification_bg.jpg); background-size: cover;">
                                                     <span class="m-dropdown__header-title">
-                                                        0 sản phẩm
+                                                        Quản lý đơn hàng
                                                     </span>
                                                     <span class="m-dropdown__header-subtitle">
-                                                        IP Guest: {{$_SERVER['REMOTE_ADDR']}}
-                                                        <br>{{Session::getId()}}
+                                                        IP Guest: <label>{{$ip}}</label>
+                                                        <input type="hidden" id="ipguest" name="ipguest" value="{{$ip}}">
                                                     </span>
                                                 </div>
                                                 <div class="m-dropdown__body">
                                                     <div class="m-dropdown__content">
                                                         <div class="m-scrollable" data-scrollable="true" data-max-height="250" data-mobile-max-height="200">
                                                             <div class="m-list-timeline m-list-timeline--skin-light">
-                                                                <div class="m-list-timeline__items">
+                                                                <div class="m-list-timeline__items" id="ttcarts" >
+                                                                    @foreach($modelcarts as $cart)
                                                                     <div class="m-list-timeline__item">
                                                                         <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
                                                                         <span class="m-list-timeline__text">
-                                                                            12 new users registered
+                                                                            {{$cart->tensp}}
                                                                         </span>
                                                                         <span class="m-list-timeline__time">
-                                                                            <a href="">Xóa</a>
+                                                                           <button type="button" class="btn m-btn--pill m-btn--air  btn-outline-brand btn-sm" onclick="delcarts({{$cart->id}})">
+                                                                               Xóa
+                                                                           </button>
                                                                         </span>
                                                                     </div>
-                                                                    <div class="m-list-timeline__item">
-                                                                        <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-                                                                        <span class="m-list-timeline__text">
-                                                                            12 new users registered
-                                                                        </span>
-                                                                        <span class="m-list-timeline__time">
-                                                                            <a href="">Xóa</a>
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="m-list-timeline__item">
-                                                                        <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-                                                                        <span class="m-list-timeline__text">
-                                                                            12 new users registered
-                                                                        </span>
-                                                                        <span class="m-list-timeline__time">
-                                                                            <a href="">Xóa</a>
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="m-list-timeline__item">
-                                                                        <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-                                                                        <span class="m-list-timeline__text">
-                                                                            12 new users registered
-                                                                        </span>
-                                                                        <span class="m-list-timeline__time">
-                                                                            <a href="">Xóa</a>
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="m-list-timeline__item">
-                                                                        <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-                                                                        <span class="m-list-timeline__text">
-                                                                            12 new users registered
-                                                                        </span>
-                                                                        <span class="m-list-timeline__time">
-                                                                            <a href="">Xóa</a>
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="m-list-timeline__item">
-                                                                        <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-                                                                        <span class="m-list-timeline__text">
-                                                                            12 new users registered
-                                                                        </span>
-                                                                        <span class="m-list-timeline__time">
-                                                                            <a href="">Xóa</a>
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="m-list-timeline__item">
-                                                                        <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-                                                                        <span class="m-list-timeline__text">
-                                                                            12 new users registered
-                                                                        </span>
-                                                                        <span class="m-list-timeline__time">
-                                                                            <a href="">Xóa</a>
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="m-list-timeline__item">
-                                                                        <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-                                                                        <span class="m-list-timeline__text">
-                                                                            12 new users registered
-                                                                        </span>
-                                                                        <span class="m-list-timeline__time">
-                                                                            <a href="">Xóa</a>
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="m-list-timeline__item">
-                                                                        <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-                                                                        <span class="m-list-timeline__text">
-                                                                            12 new users registered
-                                                                        </span>
-                                                                        <span class="m-list-timeline__time">
-                                                                            <a href="">Xóa</a>
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="m-list-timeline__item">
-                                                                        <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-                                                                        <span class="m-list-timeline__text">
-                                                                            12 new users registered
-                                                                        </span>
-                                                                        <span class="m-list-timeline__time">
-                                                                            <a href="">Xóa</a>
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="m-list-timeline__item">
-                                                                        <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-                                                                        <span class="m-list-timeline__text">
-                                                                            12 new users registered
-                                                                        </span>
-                                                                        <span class="m-list-timeline__time">
-                                                                            <a href="">Xóa</a>
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="m-list-timeline__item">
-                                                                        <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-                                                                        <span class="m-list-timeline__text">
-                                                                            12 new users registered
-                                                                        </span>
-                                                                        <span class="m-list-timeline__time">
-                                                                            <a href="">Xóa</a>
-                                                                        </span>
-                                                                    </div>
+                                                                    @endforeach
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <ul class="m-nav m-nav--skin-light">
                                                             <li class="m-nav__separator m-nav__separator--fit"></li>
                                                             <li class="m-nav__item" style="text-align: center">
-                                                                <button type="button" class="btn m-btn--pill m-btn--air btn-secondary btn-sm">
+                                                                <a class="btn m-btn--pill m-btn--air btn-secondary btn-sm" href="{{url('quanlydonhang?&ipguest='.$ip)}}">
                                                                     <i class="fa fa-shopping-cart"></i>&nbsp;Quản lý đơn hàng
-                                                                </button>
+                                                                </a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -581,6 +494,31 @@
 </ul>
 <!-- begin::Quick Nav -->
 
+
 </body>
+<script>
+    function delcarts(id){
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+        $.ajax({
+            url: '/ajax/delcarts',
+            type: 'GET',
+            data: {
+                _token: CSRF_TOKEN,
+                id: id,
+                ipguest: $('#ipguest').val()
+            },
+            dataType: 'JSON',
+            success: function (data) {
+                if (data.status == 'success') {
+                    $('#ttcarts').replaceWith(data.message);
+                    toastr.success("Đã xóa sản phẩm trong giỏ hàng", "Thành công!");
+                }
+                else
+                    toastr.error(data.message);
+            }
+        })
+    }
+</script>
 <!-- end::Body -->
 </html>
