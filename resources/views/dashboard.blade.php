@@ -76,7 +76,7 @@
                                                 @if(count($modelspkt)>0)
                                                     <div class="row">
                                                         @foreach($modelspkt as $kt)
-                                                            <div class="col-sm-6 col-md-4">
+                                                            <div class="col-sm-6 col-md-3">
                                                                 <div class="thumbnail">
                                                                     <div style="text-align: right">
                                                                         <button type="button" class="btn btn-outline-brand btn-sm">
@@ -114,7 +114,7 @@
                                                 @if(count($modelspql)>0)
                                                     <div class="row">
                                                         @foreach($modelspql as $ql)
-                                                            <div class="col-sm-6 col-md-4">
+                                                            <div class="col-sm-6 col-md-3">
                                                                 <div class="thumbnail">
                                                                     <div style="text-align: right">
                                                                         <button type="button" class="btn btn-outline-brand btn-sm">
