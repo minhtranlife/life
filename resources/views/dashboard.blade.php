@@ -27,6 +27,7 @@
 
 @stop
 @section('content')
+
         <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider">
                 <!--Độ phân giải 1000 x 250-->
@@ -218,6 +219,7 @@
                 </div>
             </div>
         </div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 <script>

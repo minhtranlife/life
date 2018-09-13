@@ -30,6 +30,9 @@ Route::resource('imgcompany','ImgCompanyController');
 
 Route::get('/ajax/carts','AjaxController@carts');
 Route::get('/ajax/delcarts','AjaxController@delcarts');
+Route::get('/ajax/xoacarts','AjaxController@xoacarts');
+
+Route::resource('quanlydonhang','CartsController');
 
 
 

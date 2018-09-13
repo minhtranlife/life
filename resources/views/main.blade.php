@@ -112,10 +112,20 @@
                     <!-- end::Brand -->
                     <!-- begin::Topbar -->
                     <!--Start Cart-->
+
                     <div class="m-stack__item m-stack__item--fluid m-header-head" id="m_header_nav">
                         <div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
                             <div class="m-stack__item m-topbar__nav-wrapper">
+
                                 <ul class="m-topbar__nav m-nav m-nav--inline">
+                                    <!--Carts-->
+                                    <?php
+                                    $ip = $_SERVER['REMOTE_ADDR'];
+                                    $modelcarts = \App\CartsCtDf::where('ipguest',$ip)->get();
+
+                                    ?>
+                                    <input type="hidden" id="ipguest" name="ipguest" value="{{$ip}}">
+                                    <!--End Carts-->
                                     <li class="m-nav__item m-topbar__notifications m-topbar__notifications--img m-dropdown m-dropdown--large m-dropdown--header-bg-fill m-dropdown--arrow m-dropdown--align-center 	m-dropdown--mobile-full-width" data-dropdown-toggle="click" data-dropdown-persistent="true" title="Giỏ hàng">
                                         <a href="#" class="m-nav__link m-dropdown__toggle" id="m_topbar_notification_icon">
                                             <span class="m-nav__link-badge m-badge m-badge--dot m-badge--dot-small m-badge--danger"></span>
@@ -125,30 +135,28 @@
                                                 </span>
                                             </span>
                                         </a>
-                                        <!--Carts-->
-                                        <?php
-                                            $ip = $_SERVER['REMOTE_ADDR'];
-                                            $modelcarts = \App\CartsCtDf::where('ipguest',$ip)->get();
 
-                                        ?>
-                                        <!--End Carts-->
                                         <div class="m-dropdown__wrapper" >
                                             <span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
                                             <div class="m-dropdown__inner">
-                                                <div class="m-dropdown__header m--align-center" style="background: url(assets/app/media/img/misc/notification_bg.jpg); background-size: cover;">
+                                                <div class="m-dropdown__header m--align-center" style=" background-image: url(assets/app/media/img/misc/notification_bg.jpg); background-size: cover;">
                                                     <span class="m-dropdown__header-title">
                                                         Quản lý đơn hàng
                                                     </span>
                                                     <span class="m-dropdown__header-subtitle">
                                                         IP Guest: <label>{{$ip}}</label>
-                                                        <input type="hidden" id="ipguest" name="ipguest" value="{{$ip}}">
+
                                                     </span>
                                                 </div>
                                                 <div class="m-dropdown__body">
                                                     <div class="m-dropdown__content">
                                                         <div class="m-scrollable" data-scrollable="true" data-max-height="250" data-mobile-max-height="200">
-                                                            <div class="m-list-timeline m-list-timeline--skin-light">
-                                                                <div class="m-list-timeline__items" id="ttcarts" >
+                                                            <div class="m-list-timeline m-list-timeline--skin-light" id="ttcarts">
+                                                                <div class="m-list-timeline__heading">
+                                                                    Tổng cộng:{{count($modelcarts)}} sản phẩm
+                                                                </div>
+                                                                <div class="m-list-timeline__items">
+
                                                                     @foreach($modelcarts as $cart)
                                                                     <div class="m-list-timeline__item">
                                                                         <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
@@ -168,7 +176,7 @@
                                                         <ul class="m-nav m-nav--skin-light">
                                                             <li class="m-nav__separator m-nav__separator--fit"></li>
                                                             <li class="m-nav__item" style="text-align: center">
-                                                                <a class="btn m-btn--pill m-btn--air btn-secondary btn-sm" href="{{url('quanlydonhang?&ipguest='.$ip)}}">
+                                                                <a class="btn m-btn--pill m-btn--air btn-secondary btn-sm" href="{{url('quanlydonhang/create?&ipguest='.$ip)}}">
                                                                     <i class="fa fa-shopping-cart"></i>&nbsp;Quản lý đơn hàng
                                                                 </a>
                                                             </li>
@@ -193,7 +201,7 @@
                                         <div class="m-dropdown__wrapper">
                                             <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
                                             <div class="m-dropdown__inner">
-                                                <div class="m-dropdown__header m--align-center" style="background: url(assets/app/media/img/misc/user_profile_bg.jpg); background-size: cover;">
+                                                <div class="m-dropdown__header m--align-center" style="background-image: {{url('url(assets/app/media/img/misc/user_profile_bg.jpg)')}}; background-size: cover;">
                                                     <div class="m-card-user m-card-user--skin-dark">
                                                         <div class="m-card-user__pic">
                                                             <img src="{{url('/images/avatar/default-user.png')}}" class="m--img-rounded m--marginless" alt=""/>
