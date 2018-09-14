@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2018 at 05:12 AM
+-- Generation Time: Sep 14, 2018 at 10:27 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -21,6 +21,58 @@ SET time_zone = "+00:00";
 --
 -- Database: `life_local`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `carts`
+--
+
+CREATE TABLE `carts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `ipguest` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `madh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tel` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ghichu` text COLLATE utf8_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cartsct`
+--
+
+CREATE TABLE `cartsct` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `ipguest` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `madh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `idsp` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nhomsp` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tensp` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cartsctdf`
+--
+
+CREATE TABLE `cartsctdf` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `ipguest` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `idsp` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nhomsp` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tensp` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -127,7 +179,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2018_09_05_140357_create_user_table', 2),
 (5, '2018_09_06_133045_create_lichtaphuan_table', 3),
 (6, '2018_09_07_145339_create_vitrituyendung_table', 3),
-(7, '2018_09_10_144814_create_imgcompany_table', 4);
+(7, '2018_09_10_144814_create_imgcompany_table', 4),
+(8, '2018_09_12_115626_create_carts_table', 5),
+(9, '2018_09_12_120111_create_cartsctdf_table', 5),
+(10, '2018_09_14_110852_create_cartsct_table', 6);
 
 -- --------------------------------------------------------
 
@@ -188,6 +243,24 @@ INSERT INTO `vitrituyendung` (`id`, `vitri`, `soluong`, `hannophs`, `mota`, `yeu
 --
 
 --
+-- Indexes for table `carts`
+--
+ALTER TABLE `carts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cartsct`
+--
+ALTER TABLE `cartsct`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cartsctdf`
+--
+ALTER TABLE `cartsctdf`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `dmsanpham`
 --
 ALTER TABLE `dmsanpham`
@@ -228,6 +301,21 @@ ALTER TABLE `vitrituyendung`
 --
 
 --
+-- AUTO_INCREMENT for table `carts`
+--
+ALTER TABLE `carts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `cartsct`
+--
+ALTER TABLE `cartsct`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `cartsctdf`
+--
+ALTER TABLE `cartsctdf`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+--
 -- AUTO_INCREMENT for table `dmsanpham`
 --
 ALTER TABLE `dmsanpham`
@@ -246,7 +334,7 @@ ALTER TABLE `lichtaphuan`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `user`
 --
@@ -256,7 +344,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `vitrituyendung`
 --
 ALTER TABLE `vitrituyendung`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;COMMIT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
