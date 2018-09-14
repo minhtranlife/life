@@ -16,7 +16,7 @@
         <!-- END: Subheader -->
         <div class="m-content">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-8">
                     <!--begin::Portlet-->
                     <div class="m-portlet m-portlet--tab">
                         <div class="m-portlet__head">
@@ -119,9 +119,7 @@
                     </div>
                     <!--end::Portlet-->
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-4">
                     <div class="m-portlet m-portlet--tab" id="ttctcarts">
                     </div>
                     <!--begin::Portlet-->
