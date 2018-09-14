@@ -139,7 +139,7 @@
                                     <label for="example-text-input" class="col-2 col-form-label">
                                         Ghi chú đơn hàng
                                     </label>
-                                    <div class="col-10">
+                                    <div class="col-lg-10">
                                         <textarea id="ghichu" class="form-control" name="ghichu" cols="30" rows="10"
                                                   placeholder="Ghi chú đơn hàng"></textarea>
                                     </div>

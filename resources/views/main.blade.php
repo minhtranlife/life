@@ -139,7 +139,7 @@
                                         <div class="m-dropdown__wrapper" >
                                             <span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
                                             <div class="m-dropdown__inner">
-                                                <div class="m-dropdown__header m--align-center" style=" background-image: url(assets/app/media/img/misc/notification_bg.jpg); background-size: cover;">
+                                                <div class="m-dropdown__header m--align-center" style=" background-image: url(../assets/app/media/img/misc/notification_bg.jpg); background-size: cover;">
                                                     <span class="m-dropdown__header-title">
                                                         Quản lý giỏ hàng
                                                     </span>
@@ -201,7 +201,7 @@
                                         <div class="m-dropdown__wrapper">
                                             <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
                                             <div class="m-dropdown__inner">
-                                                <div class="m-dropdown__header m--align-center" style="background-image: url(assets/app/media/img/misc/user_profile_bg.jpg); background-size: cover;">
+                                                <div class="m-dropdown__header m--align-center" style="background-image: url(../assets/app/media/img/misc/user_profile_bg.jpg); background-size: cover;">
                                                     <div class="m-card-user m-card-user--skin-dark">
                                                         <div class="m-card-user__pic">
                                                             <img src="{{url('/images/avatar/default-user.png')}}" class="m--img-rounded m--marginless" alt=""/>

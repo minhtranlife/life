@@ -82,7 +82,7 @@
                                                     <td>{{$ttdh->email}}</td>
                                                     <td>{{$ttdh->tel}}</td>
                                                     <td style="text-align: center">
-                                                        @if($ttdh->status == 'Chờ xác minh')
+                                                        @if($ttdh->status == 'waiting')
                                                             <span class="m-badge  m-badge--danger m-badge--wide">{{$ttdh->status}}</span>
                                                         @else
                                                             <span class="m-badge  m-badge--success m-badge--wide">{{$ttdh->status}}</span>
