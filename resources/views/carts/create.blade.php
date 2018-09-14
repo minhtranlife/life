@@ -3,12 +3,40 @@
 @section('custom-style')
     <link rel="stylesheet" type="text/css" href="{{url('assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{url('assets/global/plugins/select2/select2.css')}}"/>
-    <!-- END THEME STYLES -->
+    <!--Date-->
+    <link type="text/css" rel="stylesheet" href="{{ url('vendors/bootstrap-datepicker/css/datepicker.css') }}">
+    <!--End Date-->
 @stop
 
 
 @section('custom-script')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
+
+    <script type="text/javascript" src="{{url('assets/global/plugins/select2/select2.min.js')}}"></script>
+    <script type="text/javascript" src="{{url('assets/global/plugins/datatables/media/js/jquery.dataTables.min.js')}}"></script>
+    <script type="text/javascript" src="{{url('assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js')}}"></script>
+
+
+    <!-- END PAGE LEVEL PLUGINS -->
+    <script src="{{url('assets/admin/pages/scripts/table-managed.js')}}"></script>
+
+    <!--Date>
+    <script type="text/javascript" src="{{ url('js/jquery-1.10.2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url('vendors/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+    <script type="text/javascript" src="{{ url('vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <script type="text/javascript" src="{{ url('js/main.js') }}"></script>
+
+    <End Date-->
+    <!--Date new-->
+    <!--script src="{{url('minhtran/jquery.min.js')}}"></script-->
+    <script src="{{url('minhtran/jquery.inputmask.bundle.min.js')}}"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(":input").inputmask();
+        });
+    </script>
+
 
 @stop
 
@@ -82,14 +110,15 @@
                                 </div>
                             </div>
                             <!--end::Content-->
-                            <form class="m-form m-form--fit m-form--label-align-right">
+                            <!--form class="m-form m-form--fit m-form--label-align-right"-->
+                                {!! Form::open(['url'=>'quanlydonhang', 'id' => 'create_quanlydonhang', 'class'=>'m-form m-form--fit m-form--label-align-right']) !!}
                                 <div class="m-portlet__body">
                                     <div class="form-group m-form__group row">
                                         <label for="example-text-input" class="col-2 col-form-label">
                                             Full Name
                                         </label>
                                         <div class="col-7">
-                                            <input class="form-control m-input" type="text">
+                                            <input type="text" id="name" name="name" class="form-control required">
                                         </div>
                                     </div>
                                     <div class="form-group m-form__group row">
@@ -97,7 +126,7 @@
                                             Email
                                         </label>
                                         <div class="col-7">
-                                            <input class="form-control m-input" type="text">
+                                            <input type="email" class="form-control required" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
                                         </div>
                                     </div>
                                     <div class="form-group m-form__group row">
@@ -105,7 +134,7 @@
                                             Phone No.
                                         </label>
                                         <div class="col-7">
-                                            <input class="form-control m-input" type="text">
+                                            <input type="number" class="form-control required" name="tel" id="tel" maxlength="11">
                                         </div>
                                     </div>
                                     <div class="form-group m-form__group row">
@@ -113,16 +142,17 @@
                                             Ghi chú đơn hàng
                                         </label>
                                         <div class="col-7">
-                                        <textarea id="gioithieusp" class="form-control" name="gioithieusp" cols="30" rows="10"
+                                        <textarea id="ghichu" class="form-control" name="ghichu" cols="30" rows="10"
                                                   placeholder="Ghi chú đơn hàng"></textarea>
                                         </div>
+
                                     </div>
                                     <div class="m-portlet__foot m-portlet__foot--fit">
                                         <div class="m-form__actions">
                                             <div class="row">
                                                 <div class="col-2"></div>
                                                 <div class="col-7">
-                                                    <button type="reset" class="btn btn-accent m-btn m-btn--air m-btn--custom">
+                                                    <button type="submit" class="btn btn-accent m-btn m-btn--air m-btn--custom" onclick="validateForm()">
                                                         Tạo đơn hàng
                                                     </button>
                                                     &nbsp;&nbsp;
@@ -133,15 +163,31 @@
                                             </div>
                                         </div>
                                     </div>
-                            </form>
+                                {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    @include('includes.script.create-header-scripts')
+        <script type="text/javascript">
+            function validateForm(){
 
-    <script>
+                var validator = $("#create_quanlydonhang").validate({
+                    rules: {
+                        ten :"required"
+                    },
+                    messages: {
+                        ten :"Chưa nhập dữ liệu"
+                    }
+                });
+            }
+        </script>
+
+
+
+        <script>
         function xoacarts(id){
             var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
             $.ajax({

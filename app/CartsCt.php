@@ -4,17 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Carts extends Model
+class CartsCt extends Model
 {
-    protected $table = 'carts';
+    protected $table = 'cartsct';
     protected $fillable = [
         'id',
         'ipguest',
-        'status',
         'madh',
-        'email',
-        'name',
-        'tel',
-        'ghichu',
+        'idsp',
+        'nhomsp',
+        'tensp',
     ];
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Carts;
+use App\CartsCt;
 use App\CartsCtDf;
 use App\DmSanPham;
 use Illuminate\Http\Request;
@@ -158,6 +160,70 @@ class AjaxController extends Controller
 
         $result['status'] = 'success';
 //        dd($result['message']);
+
+        die(json_encode($result));
+    }
+
+    public function showcartsct(Request $request){
+        $result = array(
+            'status' => 'fail',
+            'message' => 'error',
+        );
+        $inputs = $request->all();
+        $model = Carts::where('id',$inputs['id'])->first();
+
+        $modelcarts = CartsCt::where('madh',$model->madh)->get();
+        if(count($modelcarts)>0){
+
+            $result['message'] = '<div class="m-portlet m-portlet--tab" id="ttctcarts">
+                        <div class="m-portlet__head">
+                            <div class="m-portlet__head-caption">
+
+                                <div class="m-portlet__head-title">
+												<span class="m-portlet__head-icon m--hide">
+													<i class="la la-gear"></i>
+												</span>
+                                    <h3 class="m-portlet__head-text">
+                                        Thông tin chi tiết  đơn hàng
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-portlet__body">
+                            <div class="form-group m-form__group">
+                                <div class="alert m-alert m-alert--default" role="alert"> Ghi chú đơn hàng: '
+                                 . nl2br(e($model->ghichu)).
+                                '</div>
+                            </div>
+                            <div class="form-group m-form__group row">
+                                <table class="table">
+                                    <!--begin::Thead-->
+                                    <thead>
+                                    <tr>
+                                        <th style="text-align: center" width="2%">STT</th>
+                                        <th style="text-align: center" width="49%">Nhóm sản phẩm</th>
+                                        <th style="text-align: center" width="49%">Tên sản phẩm</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>';
+            foreach($modelcarts as $key=>$cart) {
+            $result['message'] .= '<tr>';
+            $result['message'] .= '<td style="text-align: center">'.($key+1).'</td>';
+            $result['message'] .= '<td style="text-align: center">'.$cart->nhomsp.'</td>';
+            $result['message'] .= '<td style="text-align: left">'.$cart->tensp.'</td>';
+            $result['message'] .= '</tr>';
+            }
+            $result['message'] .= '</tbody>
+                                </table>';
+            $result['message'] .= '<lable><b> Tổng cộng:&nbsp;'.count($modelcarts).'&nbsp;sản phẩm</b></lable>';
+            $result['message'] .=' </div>
+                        </div>
+                    </div>';
+
+            $result['status'] = 'success';
+        }else{
+            $result['message'] = 'Không tìm thấy chi tiết đơn hàng';
+        }
 
         die(json_encode($result));
     }

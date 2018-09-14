@@ -176,7 +176,7 @@
                                                         <ul class="m-nav m-nav--skin-light">
                                                             <li class="m-nav__separator m-nav__separator--fit"></li>
                                                             <li class="m-nav__item" style="text-align: center">
-                                                                <a class="btn m-btn--pill m-btn--air btn-secondary btn-sm" href="{{url('quanlydonhang/create?&ipguest='.$ip)}}">
+                                                                <a class="btn m-btn--pill m-btn--air btn-secondary btn-sm" href="{{url('quanlydonhang/create')}}">
                                                                     <i class="fa fa-shopping-cart"></i>&nbsp;Quản lý đơn hàng
                                                                 </a>
                                                             </li>
@@ -201,7 +201,7 @@
                                         <div class="m-dropdown__wrapper">
                                             <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
                                             <div class="m-dropdown__inner">
-                                                <div class="m-dropdown__header m--align-center" style="background-image: {{url('url(assets/app/media/img/misc/user_profile_bg.jpg)')}}; background-size: cover;">
+                                                <div class="m-dropdown__header m--align-center" style="background-image: url(assets/app/media/img/misc/user_profile_bg.jpg); background-size: cover;">
                                                     <div class="m-card-user m-card-user--skin-dark">
                                                         <div class="m-card-user__pic">
                                                             <img src="{{url('/images/avatar/default-user.png')}}" class="m--img-rounded m--marginless" alt=""/>
@@ -423,6 +423,37 @@
                                                     <i class="m-menu__link-icon flaticon-clipboard"></i>
                                                     <span class="m-menu__link-text">
                                                         Tin sản phẩm
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"  data-menu-submenu-toggle="click" aria-haspopup="true">
+                                    <a  href="#" class="m-menu__link m-menu__toggle">
+                                        <span class="m-menu__item-here"></span>
+												<span class="m-menu__link-text">
+													Đơn hàng
+												</span>
+                                        <i class="m-menu__hor-arrow la la-angle-down"></i>
+                                        <i class="m-menu__ver-arrow la la-angle-right"></i>
+                                    </a>
+                                    <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
+                                        <span class="m-menu__arrow m-menu__arrow--adjust"></span>
+                                        <ul class="m-menu__subnav">
+                                            <li class="m-menu__item">
+                                                <a href="{{url('quanlydonhang')}}" class="m-menu__link ">
+                                                    <i class="m-menu__link-icon flaticon-clipboard"></i>
+                                                    <span class="m-menu__link-text">
+                                                        Quản lý đơn hàng
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="m-menu__item">
+                                                <a href="{{url('quanlydonhang/create')}}" class="m-menu__link ">
+                                                    <i class="m-menu__link-icon flaticon-cart"></i>
+                                                    <span class="m-menu__link-text">
+                                                        Giỏ hàng
                                                     </span>
                                                 </a>
                                             </li>
