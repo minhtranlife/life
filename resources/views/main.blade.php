@@ -141,7 +141,7 @@
                                             <div class="m-dropdown__inner">
                                                 <div class="m-dropdown__header m--align-center" style=" background-image: url(assets/app/media/img/misc/notification_bg.jpg); background-size: cover;">
                                                     <span class="m-dropdown__header-title">
-                                                        Quản lý đơn hàng
+                                                        Quản lý giỏ hàng
                                                     </span>
                                                     <span class="m-dropdown__header-subtitle">
                                                         IP Guest: <label>{{$ip}}</label>
@@ -177,7 +177,7 @@
                                                             <li class="m-nav__separator m-nav__separator--fit"></li>
                                                             <li class="m-nav__item" style="text-align: center">
                                                                 <a class="btn m-btn--pill m-btn--air btn-secondary btn-sm" href="{{url('quanlydonhang/create')}}">
-                                                                    <i class="fa fa-shopping-cart"></i>&nbsp;Quản lý đơn hàng
+                                                                    <i class="fa fa-shopping-cart"></i>&nbsp;Quản lý giỏ hàng
                                                                 </a>
                                                             </li>
                                                         </ul>
