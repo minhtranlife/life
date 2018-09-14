@@ -45,7 +45,7 @@
         <div class="m-grid__item m-grid__item--fluid m-wrapper">
             <div class="m-content">
                 <div class="row">
-                    <div class="col-xl-12">
+                    <div class="col-xl-6">
                         <div class="m-portlet m-portlet--full-height">
                             <div class="m-portlet__head">
                                 <div class="m-portlet__head-caption">
@@ -96,9 +96,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12">
+                    <div class="col-xl-6">
                         <div class="m-portlet m-portlet--full-height">
                             <div class="m-portlet__head">
                                 <div class="m-portlet__head-caption">
@@ -111,63 +109,62 @@
                             </div>
                             <!--end::Content-->
                             <!--form class="m-form m-form--fit m-form--label-align-right"-->
-                                {!! Form::open(['url'=>'quanlydonhang', 'id' => 'create_quanlydonhang', 'class'=>'m-form m-form--fit m-form--label-align-right']) !!}
-                                <div class="m-portlet__body">
-                                    <div class="form-group m-form__group row">
-                                        <label for="example-text-input" class="col-2 col-form-label">
-                                            Full Name
-                                        </label>
-                                        <div class="col-7">
-                                            <input type="text" id="name" name="name" class="form-control required">
-                                        </div>
+                            {!! Form::open(['url'=>'quanlydonhang', 'id' => 'create_quanlydonhang', 'class'=>'m-form m-form--fit m-form--label-align-right']) !!}
+                            <div class="m-portlet__body">
+                                <div class="form-group m-form__group row">
+                                    <label for="example-text-input" class="col-2 col-form-label">
+                                        Full Name
+                                    </label>
+                                    <div class="col-10">
+                                        <input type="text" id="name" name="name" class="form-control required">
                                     </div>
-                                    <div class="form-group m-form__group row">
-                                        <label for="example-text-input" class="col-2 col-form-label">
-                                            Email
-                                        </label>
-                                        <div class="col-7">
-                                            <input type="email" class="form-control required" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-                                        </div>
+                                </div>
+                                <div class="form-group m-form__group row">
+                                    <label for="example-text-input" class="col-2 col-form-label">
+                                        Email
+                                    </label>
+                                    <div class="col-10">
+                                        <input type="email" class="form-control required" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
                                     </div>
-                                    <div class="form-group m-form__group row">
-                                        <label for="example-text-input" class="col-2 col-form-label">
-                                            Phone No.
-                                        </label>
-                                        <div class="col-7">
-                                            <input type="number" class="form-control required" name="tel" id="tel" maxlength="11">
-                                        </div>
+                                </div>
+                                <div class="form-group m-form__group row">
+                                    <label for="example-text-input" class="col-2 col-form-label">
+                                        Phone No.
+                                    </label>
+                                    <div class="col-10">
+                                        <input type="number" class="form-control required" name="tel" id="tel" maxlength="11">
                                     </div>
-                                    <div class="form-group m-form__group row">
-                                        <label for="example-text-input" class="col-2 col-form-label">
-                                            Ghi chú đơn hàng
-                                        </label>
-                                        <div class="col-7">
+                                </div>
+                                <div class="form-group m-form__group row">
+                                    <label for="example-text-input" class="col-2 col-form-label">
+                                        Ghi chú đơn hàng
+                                    </label>
+                                    <div class="col-10">
                                         <textarea id="ghichu" class="form-control" name="ghichu" cols="30" rows="10"
                                                   placeholder="Ghi chú đơn hàng"></textarea>
-                                        </div>
-
                                     </div>
-                                    <div class="m-portlet__foot m-portlet__foot--fit">
-                                        <div class="m-form__actions">
-                                            <div class="row">
-                                                <div class="col-2"></div>
-                                                <div class="col-7">
-                                                    <button type="submit" class="btn btn-accent m-btn m-btn--air m-btn--custom" onclick="validateForm()">
-                                                        Tạo đơn hàng
-                                                    </button>
-                                                    &nbsp;&nbsp;
-                                                    <button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">
-                                                        Cancel
-                                                    </button>
-                                                </div>
+
+                                </div>
+                                <div class="m-portlet__foot m-portlet__foot--fit">
+                                    <div class="m-form__actions">
+                                        <div class="row">
+                                            <div class="col-12" style="text-align: center">
+                                                <button type="submit" class="btn btn-accent m-btn m-btn--air m-btn--custom" onclick="validateForm()">
+                                                    Tạo đơn hàng
+                                                </button>
+                                                &nbsp;&nbsp;
+                                                <button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">
+                                                    Cancel
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                                 {!! Form::close() !!}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
     @include('includes.script.create-header-scripts')
