@@ -27,19 +27,17 @@
 
 @stop
 @section('content')
-
         <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider">
                 <!--Độ phân giải 1000 x 250-->
                 <img src="{{url('images/dashboard/HPNY.jpg')}}" data-thumb="{{url('images/dashboard/HPNY.jpg')}}" alt=""
                      title="Nhân dịp đầu Xuân năm mới, Công ty phần mềm LifeSoft xin gửi tới Quý Khách hàng lời Chúc mừng năm mới. Kính chúc Quý Khách hàng một năm mới AN KHANG - THỊNH VƯỢNG">
                 <img src="{{url('images/dashboard/laravel.png')}}" data-thumb="{{url('images/dashboard/laravel.png')}}" alt="" title="" />
-                <!--img src="{{url('images/dashboard/img_mountains_wide.jpg')}}" data-thumb="{{url('images/dashboard/img_mountains_wide.jpg')}}" alt="" title="" />
-                <img src="{{url('images/dashboard/img_nature_wide.jpg')}}" data-thumb="{{url('images/dashboard/img_nature_wide.jpg')}}" alt="" />
-                <img src="{{url('images/dashboard/img_snow_wide.jpg')}}" data-thumb="{{url('images/dashboard/img_snow_wide.jpg')}}" alt="" title="" /-->
+                <img src="{{url('images/dashboard/pmktxp.png')}}" data-thumb="{{url('images/dashboard/pmktxp.png')}}" alt="" title="" />
+                <img src="{{url('images/dashboard/csdlgia.png')}}" data-thumb="{{url('images/dashboard/csdlgia.png')}}" alt="" />
+                <!--img src="{{url('images/dashboard/img_snow_wide.jpg')}}" data-thumb="{{url('images/dashboard/img_snow_wide.jpg')}}" alt="" title="" /-->
             </div>
         </div>
-
         <div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver	m-container m-container--responsive m-container--xxl m-page__container">
             <div class="m-grid__item m-grid__item--fluid m-wrapper">
                 <div class="m-content">
@@ -88,13 +86,13 @@
                                                                     <br>
                                                                     <a class="lightbox" href="{{url('sanpham?&id='.$kt->id)}}">
                                                                         @if(isset($kt->avatar))
-                                                                            <img src="{{url('images/sanpham/'.$kt->avatar)}}" alt=""  width="80">
+                                                                            <img src="{{url('images/sanpham/'.$kt->avatar)}}" alt=""  width="210">
                                                                         @else
                                                                             <img src="{{url('images/sanpham/noimage.png')}}" alt="" width="80">
                                                                         @endif
                                                                     </a>
                                                                     <div class="caption">
-                                                                        <h3>{{$kt->tensp}}</h3>
+                                                                        <h3 style="color:#3578e5">{{$kt->tensp}}</h3>
                                                                         <p></p>
                                                                     </div>
                                                                 </div>
@@ -127,13 +125,13 @@
                                                                     <br>
                                                                     <a class="lightbox" href="{{url('sanpham?&id='.$ql->id)}}">
                                                                         @if(isset($ql->avatar))
-                                                                            <img src="{{url('images/sanpham/'.$ql->avatar)}}" alt=""  width="80">
+                                                                            <img src="{{url('images/sanpham/'.$ql->avatar)}}" alt=""  width="210">
                                                                         @else
                                                                             <img src="{{url('images/sanpham/noimage.png')}}" alt="" width="80">
                                                                         @endif
                                                                     </a>
                                                                     <div class="caption">
-                                                                        <h3>{{$ql->tensp}}</h3>
+                                                                        <h3 style="color:#3578e5">{{$ql->tensp}}</h3>
                                                                         <p></p>
                                                                     </div>
                                                                 </div>

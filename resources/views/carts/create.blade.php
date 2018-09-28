@@ -12,30 +12,8 @@
 @section('custom-script')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
 
-    <script type="text/javascript" src="{{url('assets/global/plugins/select2/select2.min.js')}}"></script>
-    <script type="text/javascript" src="{{url('assets/global/plugins/datatables/media/js/jquery.dataTables.min.js')}}"></script>
-    <script type="text/javascript" src="{{url('assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js')}}"></script>
-
 
     <!-- END PAGE LEVEL PLUGINS -->
-    <script src="{{url('assets/admin/pages/scripts/table-managed.js')}}"></script>
-
-    <!--Date>
-    <script type="text/javascript" src="{{ url('js/jquery-1.10.2.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url('vendors/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
-    <script type="text/javascript" src="{{ url('vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
-    <script type="text/javascript" src="{{ url('js/main.js') }}"></script>
-
-    <End Date-->
-    <!--Date new-->
-    <!--script src="{{url('minhtran/jquery.min.js')}}"></script-->
-    <script src="{{url('minhtran/jquery.inputmask.bundle.min.js')}}"></script>
-
-    <script>
-        $(document).ready(function(){
-            $(":input").inputmask();
-        });
-    </script>
 
 
 @stop
@@ -167,7 +145,6 @@
                 </div>
         </div>
     </div>
-    @include('includes.script.create-header-scripts')
         <script type="text/javascript">
             function validateForm(){
 

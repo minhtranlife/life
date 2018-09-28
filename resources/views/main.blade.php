@@ -79,7 +79,7 @@
 </head>
 <!-- end::Head -->
 <!-- end::Body -->
-<body class="m-page--wide m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default"  onload="time()">
+<body style="background-image: url(../assets/app/media/img/bg/bg-3.jpg)" class="m-page--wide m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default"  onload="time()">
 <!-- begin:: Page -->
 <div class="m-grid m-grid--hor m-grid--root m-page">
     <!-- begin::Header -->
